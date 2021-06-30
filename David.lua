@@ -1,4 +1,4 @@
-Hello is Rio------------------------------------------------
+------------------------------------------------
 -- This Source Was Developed By (Rio) @W5555.--
 --   This Is The Source Channel @L9L9L .   --
 --                - David -                 --
