@@ -10211,8 +10211,7 @@ DevRio:set(David..'Rio:Add:GpRed'..msg.sender_user_id_..msg.chat_id_,'DelGpRed')
 Dev_Rio(msg.chat_id_, msg.id_, 1, "᥀︙حسنا ارسل الكلمه لحذفها " ,  1, "md")
 return false
 end
-if text == 'اضف رد' and Manager(msg) and ChCheck(msg) then
-if not DevRio:get(David..'Rio:Lock:Rd'..msg.chat_id_) then
+if text == 'اضف رد' and not DevRio:get(David..'Rio:Lock:Rd'..msg.chat_id_) and Manager(msg) and ChCheck(msg) then
 DevRio:set(David..'Rio:Add:GpRed'..msg.sender_user_id_..msg.chat_id_,'SetGpRed')
 Dev_Rio(msg.chat_id_, msg.id_, 1, "᥀︙حسنا ارسل الكلمه الان " ,  1, "md")
 return false
@@ -10231,7 +10230,7 @@ DevRio:set(David..'Rio:Add:GpText'..msg.sender_user_id_..msg.chat_id_,text)
 DevRio:sadd(David..'Rio:Manager:GpRed'..msg.chat_id_,text)
 DevRio:set(David..'DelManagerRep'..msg.chat_id_,text)
 return false
-end end end
+end end
 --     Source David     --
 if text == 'حذف رد عام' and SecondSudo(msg) and ChCheck(msg) or text == '↫ حذف رد عام ᥀' and SecondSudo(msg) and ChCheck(msg) or text == 'مسح رد عام' and SecondSudo(msg) and ChCheck(msg) or text == 'حذف رد للكل' and SecondSudo(msg) and ChCheck(msg) or text == 'مسح رد للكل' and SecondSudo(msg) and ChCheck(msg) or text == 'مسح رد مطور' and SecondSudo(msg) and ChCheck(msg) or text == 'حذف رد مطور' and SecondSudo(msg) and ChCheck(msg) then
 local List = DevRio:smembers(David.."Rio:Sudo:AllRed")
