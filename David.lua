@@ -9679,7 +9679,7 @@ if text == "تعطيل حذف الردود" and ChCheck(msg) or text == "تعط�
 if RioConstructor(msg) then
 local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تعطيل حذف ردود المدير'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
-DevRio:set(David.."Rio:Lock:Rd"..msg.chat_id_,"ok")
+DevRio:set(David.."Rio:Lock:Rd"..msg.chat_id_,true)
 return false  
 end
 end
@@ -9695,7 +9695,7 @@ if text == "تعطيل اضف رد" and ChCheck(msg) or text == "تعطيل اض
 if RioConstructor(msg) then
 local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تعطيل اضف رد'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
-DevRio:set(David.."Rio:Lock:Rd"..msg.chat_id_,"ok")
+DevRio:set(David.."Rio:Lock:Rd"..msg.chat_id_,true)
 return false  
 end
 end
