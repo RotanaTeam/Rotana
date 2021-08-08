@@ -129,18 +129,19 @@ local config = loadfile("./config.lua")()
 return config 
 end  
 Load_David() 
-print("\27[36m"..[[                                           
----------------------------------------------                                        
-|        ____              _   _            |
-|       |  _ \  ___ _    _(_) | |_          |
-|       | | | |/ _ \ \  / / |/ _  |         |  
-|       | |_| | (_| |\ V /| | (_| |         |
-|       |____/ \__,_| \_/ |_|\__,_|         |
-|-------------------------------------------|
-| This Source Was Developed By (Rio) @tsttt.|
-|   This Is The Source Channel @L9L9L .     |
-|                - David -                  |
----------------------------------------------
+print("\27[36m"..[[          
+
+      '''''''''''''''''''''''''''''''''
+      '      ___            _    __   '
+      '     / _ \___ __  __(_)__/ /   '
+      '    / // / _ `/ |/ / / _  /    '
+      '   /____/\_,_/|___/_/\_,_/     '
+      '                               '
+      '        Ch Source : @L9L9L     '
+      '            - David -          ' 
+      '                               '
+      '''''''''''''''''''''''''''''''''
+
 ]]..'\27[m'.."\n\27[35mServer Information ↬ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\27[m\n\27[36m~ \27[mUser \27[36m: \27[10;32m"..User.."\27[m\n\27[36m~ \27[mIp \27[36m: \27[10;32m"..Ip.."\27[m\n\27[36m~ \27[mName \27[36m: \27[10;32m"..Name.."\27[m\n\27[36m~ \27[mPort \27[36m: \27[10;32m"..Port.."\27[m\n\27[36m~ \27[mUpTime \27[36m: \27[10;32m"..UpTime.."\27[m\n\27[35m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\27[m")
 Config = dofile("./config.lua")
 DevId = Config.DevId
@@ -2085,6 +2086,16 @@ local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(David..'Rio:Texting:Pv',true) 
 end
+if text == 'تفعيل المطور انلاين' and ChCheck(msg) or text == '↫ تفعيل المطور انلاين ᥀' and ChCheck(msg) then   
+local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تفعيل المطور انلاين بنجاح'
+riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
+DevRio:del(David..'Rio:Devinline:Pv') 
+end
+if text == 'تعطيل المطور انلاين' and ChCheck(msg) or text == '↫ تعطيل المطور انلاين ᥀' and ChCheck(msg) then  
+local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تعطيل المطور انلاين بنجاح بنجاح'
+riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
+DevRio:set(David..'Rio:Devinline:Pv',true) 
+end
 end
 --     Source David     --
 if text == "الابراج" or text == "↫ الابراج ᥀" then  Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙ من خلال البوت يمكنك معرفه توقعات برجك \n᥀︙ فقط قم بارسال امر برج + اسم البرج \n᥀︙ مثال : برج الاسد ،\n᥀︙ لمعرفه برجك قم بالرجوع الى قسم حساب العمر ', 1, 'md') end
@@ -2108,7 +2119,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, ''..DavidTeam[math.random(#DavidTeam)]..'' , 1
 return false
 end
 --     Source David     --
-if text == 'المطور' or text == 'مطور' or text == '↫  المطور ᥀' then
+if text and (text == 'المطور' or text == 'مطور' or text == '↫  المطور ᥀') and not DevRio:get(David..'Rio:Devinline:Pv'..msg.chat_id_) then
 tdcli_function({ID="GetUser",user_id_=DevId},function(arg,result)
 local msg_id = msg.id_/2097152/0.5
 Text = "*᥀︙Dev Name ↬ * ["..result.first_name_.."](T.me/"..result.username_..")\n*᥀︙Dev User ↬* [@"..result.username_.."]"
@@ -3604,6 +3615,17 @@ end
 --     Source David     --
 if text == "الرابط" then
 if not DevRio:get(David..'Rio:Lock:GpLinks'..msg.chat_id_) then 
+if DevRio:get(David.."Rio:Groups:Links"..msg.chat_id_) then
+Dev_Rio(msg.chat_id_, msg.id_, 1, "᥀︙Group Link ↬ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"..DevRio:get(David.."Rio:Groups:Links"..msg.chat_id_), 1, "html")
+else 
+Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙لايوجد رابط ارسل ↫ ضع رابط او ارسل ↫ انشاء رابط للانشاء', 1, 'md')
+end
+else
+end
+end
+--     Source David     --
+if text == "الرابط" then
+if not DevRio:get(David.."Rio:Lock:GpLinksinline"..msg.chat_id_) then 
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
 local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..TokenBot..'/exportChatInviteLink?chat_id='..msg.chat_id_)) or DevRio:get(David.."Private:Group:Link"..msg.chat_id_) 
 if linkgpp.ok == true then 
@@ -3612,7 +3634,6 @@ local inline = {{{text = ta.title_, url=linkgpp.result}},
 } 
 SendInline(msg.chat_id_,Text,nil,inline,msg.id_/2097152/0.5) 
 else 
-Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙جلب رابط المجموعه معطل', 1, 'md')
 end 
 end,nil) 
 end
@@ -9672,6 +9693,22 @@ if RioConstructor(msg) then
 local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تفعيل حذف ردود المدير'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
 DevRio:del(David.."Rio:Lock:Rd"..msg.chat_id_)
+return false  
+end
+end
+if text == "تعطيل الرابط انلاين" and ChCheck(msg) or text == "تعطيل جلب الرابط انلاين" and ChCheck(msg) then 
+if Admin(msg) then
+local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تعطيل جلب رابط انلاين المجموعه'
+riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
+DevRio:set(David.."Rio:Lock:GpLinksinline"..msg.chat_id_,"ok")
+return false  
+end
+end
+if text == "تفعيل الرابط انلاين" and ChCheck(msg) or text == "تفعيل جلب الرابط انلاين" and ChCheck(msg) then 
+if Admin(msg) then
+local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تفعيل جلب رابط انلاين المجموعه'
+riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
+DevRio:del(David.."Rio:Lock:GpLinksinline"..msg.chat_id_)
 return false  
 end
 end
