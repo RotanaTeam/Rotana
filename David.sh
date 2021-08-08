@@ -43,17 +43,16 @@ sudo luarocks install luautf8
 cd .. ;sudo rm -rf luarocks*
 sudo timedatectl set-timezone Asia/Baghdad
 echo -e "\033[0;36m"
-echo -e "---------------------------------------------"                                       
-echo -e "|        ____              _   _            |"
-echo -e "|       |  _ \  ___ _    _(_) | |_          |"
-echo -e "|       | | | |/ _ \ \  / / |/ _  |         |" 
-echo -e "|       | |_| | (_| |\ V /| | (_| |         |"
-echo -e "|       |____/ \__,_| \_/ |_|\__,_|         |"
-echo -e "|-------------------------------------------|"
-echo -e "| This Source Was Developed By (Rio) @W5555.|"
-echo -e "|   This Is The Source Channel @L9L9L .     |"
-echo -e "|                - David -                  |"
-echo -e "---------------------------------------------"
+echo -e "' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '  '"
+echo -e "'   ______       ____     __    __    _____   ______     '"
+echo -e "'  (_  __ \     (    )    ) )  ( (   (_   _) (_  __ \    '"
+echo -e "'    ) ) \ \    / /\ \   ( (    ) )    | |     ) ) \ \   '"
+echo -e "'   ( (   ) )  ( (__) )   \ \  / /     | |    ( (   ) )  '"
+echo -e "'    ) )  ) )   )    (     \ \/ /      | |     ) )  ) )  '"
+echo -e "'   / /__/ /   /  /\  \     \  /      _| |__  / /__/ /   '"
+echo -e "'  (______/   /__(  )__\     \/      /_____( (______/    '"
+echo -e "'                                                        '"
+echo -e "' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '  '"
 echo -e "\033[0m"
 cd $THIS_DIR && sudo chmod +x tg
 lua David.lua
