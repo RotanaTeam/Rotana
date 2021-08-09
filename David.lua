@@ -1970,7 +1970,7 @@ if not DevRio:get(David..'Rio:Start:Time'..msg.sender_user_id_) then
 tdcli_function({ID="GetUser",user_id_=DevId},function(arg,dp) 
 local inline = {
 {{text="᥀ المطور .",url="t.me/"..(dp.username_ or "L9L9L")}},
-{{text="᥀ السورس .",url="https://t.me/L9L9L"},{text="᥀ لتنصيب بوت .",url="https://t.me/tsttt"}},
+{{text="᥀ السورس .",url="https://t.me/L9L9L"},{text="᥀ لتنصيب بوت .",url="https://t.me/tsttt"}},{{text="᥀ اضفني في مجموعتك .",url="t.me/"..dp.username_.."?startgroup=botstart"}}
 }
 local start = DevRio:get(David.."Rio:Start:Bot")
 if start then 
