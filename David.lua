@@ -921,13 +921,16 @@ if DevRio:sismember(David..'Rio:VipMem:'..data.chat_id_, data.sender_user_id_) t
 vipmem = 'المميزين • ' else vipmem = '' end
 if DevRio:sismember(David..'Rio:Cleaner:'..data.chat_id_, data.sender_user_id_) then
 cleaner = 'المنظفين • ' else cleaner = '' end
-if DevRio:sismember(David..'Rio:Constructor:'..data.chat_id_, data.sender_user_id_) or DevRio:sismember(David..'Rio:Managers:'..data.chat_id_, data.sender_user_id_) or DevRio:sismember(David..'Rio:Admins:'..data.chat_id_, data.sender_user_id_) or DevRio:sismember(David..'Rio:VipMem:'..data.chat_id_, data.sender_user_id_) or DevRio:sismember(David..'Rio:Cleaner:'..data.chat_id_, data.sender_user_id_) then
+if DevRio:sismember(David..'User:Donky:'..data.chat_id_, data.sender_user_id_) then
+donky = 'المطايه • ' else donky = '' end
+if DevRio:sismember(David..'Rio:Constructor:'..data.chat_id_, data.sender_user_id_) or DevRio:sismember(David..'Rio:Managers:'..data.chat_id_, data.sender_user_id_) or DevRio:sismember(David..'Rio:Admins:'..data.chat_id_, data.sender_user_id_) or DevRio:sismember(David..'Rio:VipMem:'..data.chat_id_, data.sender_user_id_) or DevRio:sismember(David..'Rio:Cleaner:'..data.chat_id_, data.sender_user_id_) or DevRio:sismember(David..'User:Donky:'..data.chat_id_, data.sender_user_id_) then
 DevRio:srem(David..'Rio:Constructor:'..data.chat_id_,data.sender_user_id_)
 DevRio:srem(David..'Rio:Managers:'..data.chat_id_,data.sender_user_id_)
 DevRio:srem(David..'Rio:Admins:'..data.chat_id_,data.sender_user_id_)
 DevRio:srem(David..'Rio:VipMem:'..data.chat_id_,data.sender_user_id_)
 DevRio:srem(David..'Rio:Cleaner:'..data.chat_id_,data.sender_user_id_)
-EditMsg(Chat_Id2, Msg_Id2, "᥀︙تم تنزيلك من ↫ ⤈\n~ ( "..constructor..Managers..admins..vipmem..cleaner.." ) ~ \n") 
+DevRio:srem(David..'User:Donky:'..data.chat_id_,data.sender_user_id_)
+EditMsg(Chat_Id2, Msg_Id2, "᥀︙تم تنزيلك من ↫ ⤈\n~ ( "..constructor..Managers..admins..vipmem..cleaner..donky.." ) ~ \n") 
 else 
 if IdRank(data.sender_user_id_, data.chat_id_) == 'العضو' then
 EditMsg(Chat_Id2, Msg_Id2, "᥀︙ليس لديك رتبه في البوت") 
@@ -4881,20 +4884,152 @@ if text == "ايدي المجموعه" and ChCheck(msg) then Dev_Rio(msg.chat_id
 if text == 'مسح سحكاتي' or text == 'مسح تعديلاتي' or text == 'حذف سحكاتي' or text == 'حذف تعديلاتي' then DevRio:del(David..'Rio:EditMsg'..msg.chat_id_..msg.sender_user_id_) Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙تم حذف جميع تعديلاتك بنجاح' , 1, 'md') end
 if text == 'مسح جهاتي' or text == 'مسح اضافاتي' or text == 'حذف جهاتي' or text == 'حذف اضافاتي' then DevRio:del(David..'Rio:ContactNumber'..msg.chat_id_..':'..msg.sender_user_id_) Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙تم حذف جميع جهاتك المضافه' , 1, 'md') end
 --     Source David     --
+if text and text:match('^هينه @(.*)') and ChCheck(msg) or text and text:match('^هينها @(.*)') and ChCheck(msg) then 
+if not DevRio:get(David..'Rio:Lock:Stupid'..msg.chat_id_) then
+local username = text:match('^هينه @(.*)') or text:match('^هينها @(.*)') 
+function DavidTeam(extra,result,success)
+if result.id_ then  
+if tonumber(result.id_) == tonumber(David) then  
+Dev_Rio(msg.chat_id_, msg.id_, 1, 'شو تمضرط اكو واحد يهين نفسه؟🤔👌🏿', 1, 'md')  
+return false 
+end  
+if tonumber(result.id_) == tonumber(DevId) then 
+Dev_Rio(msg.chat_id_, msg.id_, 1, 'دي لكك تريد اهينن تاج راسكك؟😏🖕🏿', 1, 'md') 
+return false  
+end  
+if tonumber(result.id_) == tonumber(1558668590) then 
+Dev_Rio(msg.chat_id_, msg.id_, 1, 'دي لكك تريد اهينن تاج راسكك؟😏🖕🏿', 1, 'md') 
+return false  
+end  
+if DevRio:sismember(David.."Rio:RioConstructor:"..msg.chat_id_,result.id_) then
+Dev_Rio(msg.chat_id_, msg.id_, 1, 'دي لكك تريد اهينن تاج راسكك؟😏🖕🏿', 1, 'md')
+return false
+end 
+local DavidTeam = "صارر ستاذيي 🏃🏻‍♂️♥️" 
+Dev_Rio(msg.chat_id_, msg.id_, 1,DavidTeam, 1, 'md') 
+local DavidTeam = { "لكك جرجف @"..username.." احترم اسيادكك لا اكتلكك وازربب على كبركك،💩🖐🏿","هشش لكك فاشل @"..username.." لتضل تمسلت لا اخربط تضاريس وجهك جنه ابط عبده، 😖👌🏿","حبيبي @"..username.." راح احاول احترمكك هالمره بلكي تبطل حيونه، 🤔🔪","دمشي لك @"..username.." ينبوع الفشل مو زين ملفيك ونحجي وياك هي منبوذ 😏🖕🏿","ها الغليض التفس ابو راس المربع @"..username.." متعلملك جم حجايه وجاي تطكطكهن علينه دبطل😒🔪",}
+Dev_Rio(msg.chat_id_, result.id_, 1,''..DavidTeam[math.random(#DavidTeam)], 1, 'html') 
+else  
+Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙العضو غير موجود في المجموعه', 1, 'md') 
+end 
+end 
+resolve_username(username,DavidTeam)
+end
+end
+--     Source David     --
+if text == ("هينه") or text == ("بعد هينه") or text == ("هينه بعد") or text == ("لك هينه") or text == ("هينها") or text == ("هينهه") or text == ("رزله") or text == ("رزلهه") or text == ("رزلها") then
+if not DevRio:get(David..'Rio:Lock:Stupid'..msg.chat_id_) then
+function hena(extra, result, success)
+if tonumber(result.sender_user_id_) == tonumber(David) then 
+Dev_Rio(msg.chat_id_, msg.id_, 1, 'شو تمضرط اكو واحد يهين نفسه؟🤔👌🏿', 1, 'md') 
+return false  
+end  
+if tonumber(result.sender_user_id_) == tonumber(DevId) then  
+Dev_Rio(msg.chat_id_, msg.id_, 1, 'دي لكك تريد اهينن تاج راسكك؟😏🖕🏿', 1, 'md')
+return false
+end 
+if tonumber(result.sender_user_id_) == tonumber(1558668590) then  
+Dev_Rio(msg.chat_id_, msg.id_, 1, 'دي لكك تريد اهينن تاج راسكك؟😏🖕🏿', 1, 'md')
+return false
+end 
+if DevRio:sismember(David.."Rio:RioConstructor:"..msg.chat_id_,result.sender_user_id_) then
+Dev_Rio(msg.chat_id_, msg.id_, 1, 'دي لكك تريد اهينن تاج راسكك؟😏🖕🏿', 1, 'md')
+return false
+end 
+local DavidTeam = "صارر ستاذيي 🏃🏻‍♂️♥️" 
+Dev_Rio(msg.chat_id_, msg.id_, 1,DavidTeam, 1, 'md') 
+local DavidTeam = {"لكك جرجف احترم اسيادكك لا اكتلكك وازربب على كبركك،💩🖐🏿","هشش فاشل لتضل تمسلت لا اخربط تضاريس وجهك جنه ابط عبده، 😖👌🏿","دمشي لك ينبوع الفشل مو زين ملفيك ونحجي وياك هي منبوذ 😏🖕🏿","ها الغليض التفس ابو راس المربع متعلملك جم حجايه وجاي تطكطكهن علينه دبطل😒🔪","حبيبي راح احاول احترمكك هالمره بلكي تبطل حيونه، 🤔🔪"} 
+Dev_Rio(msg.chat_id_, result.id_, 1,''..DavidTeam[math.random(#DavidTeam)], 1, 'md') 
+end 
+if tonumber(msg.reply_to_message_id_) == 0 then
+else 
+getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),hena)   
+end
+end
+end
+if text == ("بوسه") or text == ("بعد بوسه") or text == ("ضل بوس") or text == ("بوسه بعد") or text == ("بوسها") or text == ("بعد بوسها") or text == ("ضل بوس") or text == ("بوسها بعد") or text == ("بوسهه") then
+if not DevRio:get(David..'Rio:Lock:Stupid'..msg.chat_id_) then
+function bosh(extra, result, success)
+if tonumber(result.sender_user_id_) == tonumber(David) then 
+Dev_Rio(msg.chat_id_, msg.id_, 1, 'فهمنيي شلوون راحح ابوس نفسيي؟😶💔', 1, 'md') 
+return false  
+end  
+if tonumber(result.sender_user_id_) == tonumber(DevId) then  
+Dev_Rio(msg.chat_id_, result.id_, 1, 'مواححح احلاا بوسةة المطوريي😻🔥💗', 1, 'html')
+return false
+end 
+local DavidTeam = "صارر ستاذيي 🏃🏻‍♂️♥️" 
+Dev_Rio(msg.chat_id_, msg.id_, 1,DavidTeam, 1, 'md') 
+local DavidTeam = {"مواححح افيش عافيههه😍🔥💗","امممووااهحح شهلعسل🥺🍯💘","مواححح،ءوفف اذوب🤤💗"} 
+Dev_Rio(msg.chat_id_, result.id_, 1,''..DavidTeam[math.random(#DavidTeam)], 1, 'md') 
+end 
+if tonumber(msg.reply_to_message_id_) == 0 then
+else 
+getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),bosh)   
+end
+end
+end
+if text == ("صيحه") or text == ("صيحها") or text == ("صيحهه") or text == ("صيح") then
+if not DevRio:get(David..'Rio:Lock:Stupid'..msg.chat_id_) then
+function seha(extra, result, success)
+if tonumber(result.sender_user_id_) == tonumber(David) then 
+Dev_Rio(msg.chat_id_, msg.id_, 1, 'فهمنيي شلوون راحح اصيح نفسيي؟😶💔', 1, 'md') 
+return false  
+end  
+if tonumber(result.sender_user_id_) == tonumber(DevId) then  
+Dev_Rio(msg.chat_id_, result.id_, 1, 'تعال مطوريي محتاجيكك🏃🏻‍♂️♥️', 1, 'html')
+return false
+end 
+local DavidTeam = "صارر ستاذيي 🏃🏻‍♂️♥️" 
+Dev_Rio(msg.chat_id_, msg.id_, 1,DavidTeam, 1, 'md') 
+local DavidTeam = {"تتعال ححب محتاجيك🙂🍭","تعال يولل استاذكك ايريدككك😒🔪","يمعوود تعاال يريدوكك🤕♥️","تعال لكك ديصيحوك😐🖤"} 
+Dev_Rio(msg.chat_id_, result.id_, 1,''..DavidTeam[math.random(#DavidTeam)], 1, 'md') 
+end 
+if tonumber(msg.reply_to_message_id_) == 0 then
+else 
+getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),seha)   
+end
+end
+end
+--     Source David     --
+if text and text:match('^صيحه @(.*)') and ChCheck(msg) or text and text:match('^صيح @(.*)') and ChCheck(msg) then 
+if not DevRio:get(David..'Rio:Lock:Stupid'..msg.chat_id_) then
+local username = text:match('^صيحه @(.*)') or text:match('^صيح @(.*)') 
+function DavidTeam(extra,result,success)
+if result.id_ then  
+if tonumber(result.id_) == tonumber(David) then  
+Dev_Rio(msg.chat_id_, msg.id_, 1, 'فهمنيي شلوون راحح اصيح نفسيي؟😶💔', 1, 'md')  
+return false 
+end  
+if tonumber(result.id_) == tonumber(DevId) then 
+Dev_Rio(msg.chat_id_, msg.id_, 1, 'تعال مطوريي محتاجيكك🏃🏻‍♂️♥️ @'..username, 1, 'html') 
+return false  
+end  
+local DavidTeam = "صارر ستاذيي 🏃🏻‍♂️♥️" 
+Dev_Rio(msg.chat_id_, msg.id_, 1,DavidTeam, 1, 'md') 
+local DavidTeam = { "تتعال ححب @"..username.." محتاجيك🙂🍭","تعال يولل @"..username.." استاذكك ايريدككك😒🔪","يمعوود @"..username.." تعاال يريدوكك🤕♥️","تعال لكك @"..username.." ديصيحوك😐🖤",}
+Dev_Rio(msg.chat_id_, result.id_, 1,''..DavidTeam[math.random(#DavidTeam)], 1, 'html') 
+else  
+Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙العضو غير موجود في المجموعه', 1, 'md') 
+end 
+end 
+resolve_username(username,DavidTeam)
+end
+end
+end
+--     Source David     --
 if text == ("تنزيل الكل") and msg.reply_to_message_id_ ~= 0 and Manager(msg) and ChCheck(msg) then 
 function promote_by_reply(extra, result, success)
 if SudoId(result.sender_user_id_) == true then
 Dev_Rio(msg.chat_id_, msg.id_, 1, "᥀︙لاتستطيع تنزيل المطور الاساسي", 1, 'md')
 return false 
-end end
+end
 if DevRio:sismember(David..'Rio:RioSudo:',result.sender_user_id_) then
 riosudo = 'المطورين الاساسيين • ' else riosudo = '' end
 if DevRio:sismember(David..'Rio:SecondSudo:',result.sender_user_id_) then
 secondsudo = 'المطورين الثانويين • ' else secondsudo = '' end
 if DevRio:sismember(David..'Rio:SudoBot:',result.sender_user_id_) then
 sudobot = 'المطورين • ' else sudobot = '' end
-if DevRio:sismember(David..'Rio:Owner:'..msg.chat_id_, result.sender_user_id_) then
-owner = 'المالكين • ' else owner = '' end
 if DevRio:sismember(David..'Rio:BasicConstructor:'..msg.chat_id_, result.sender_user_id_) then
 basicconstructor = 'المنشئين الاساسيين • ' else basicconstructor = '' end
 if DevRio:sismember(David..'Rio:Constructor:'..msg.chat_id_, result.sender_user_id_) then
@@ -4909,7 +5044,7 @@ if DevRio:sismember(David..'Rio:Cleaner:'..msg.chat_id_, result.sender_user_id_)
 cleaner = 'المنظفين • ' else cleaner = ''
 end
 if RankChecking(result.sender_user_id_,msg.chat_id_) ~= false then
-ReplyStatus(msg,result.sender_user_id_,"Reply","᥀︙تم تنزيله من ↫ ⤈\n~ ( "..riosudo..secondsudo..sudobot..owner..basicconstructor..constructor..manager..admins..vipmem..cleaner.." ) ~")  
+ReplyStatus(msg,result.sender_user_id_,"Reply","᥀︙تم تنزيله من ↫ ⤈\n~ ( "..riosudo..secondsudo..sudobot..basicconstructor..constructor..manager..admins..vipmem..cleaner.." ) ~")  
 else 
 ReplyStatus(msg,result.sender_user_id_,"Reply","᥀︙لم تتم ترقيته مسبقا")  
 end
@@ -4917,7 +5052,6 @@ if RioDelAll(msg.sender_user_id_,msg.chat_id_) == 'sudoid' then
 DevRio:srem(David..'Rio:RioSudo:', result.sender_user_id_)
 DevRio:srem(David..'Rio:SecondSudo:', result.sender_user_id_)
 DevRio:srem(David..'Rio:SudoBot:', result.sender_user_id_)
-DevRio:srem(David..'Rio:Owner:'..msg.chat_id_,result.sender_user_id_)
 DevRio:srem(David..'Rio:BasicConstructor:'..msg.chat_id_,result.sender_user_id_)
 DevRio:srem(David..'Rio:Constructor:'..msg.chat_id_,result.sender_user_id_)
 DevRio:srem(David..'Rio:Managers:'..msg.chat_id_, result.sender_user_id_)
@@ -4927,7 +5061,6 @@ DevRio:srem(David..'Rio:Cleaner:'..msg.chat_id_, result.sender_user_id_)
 elseif RioDelAll(msg.sender_user_id_,msg.chat_id_) == 'riosudo' then
 DevRio:srem(David..'Rio:SecondSudo:', result.sender_user_id_)
 DevRio:srem(David..'Rio:SudoBot:', result.sender_user_id_)
-DevRio:srem(David..'Rio:Owner:'..msg.chat_id_,result.sender_user_id_)
 DevRio:srem(David..'Rio:BasicConstructor:'..msg.chat_id_,result.sender_user_id_)
 DevRio:srem(David..'Rio:Constructor:'..msg.chat_id_,result.sender_user_id_)
 DevRio:srem(David..'Rio:Managers:'..msg.chat_id_, result.sender_user_id_)
@@ -4936,7 +5069,6 @@ DevRio:srem(David..'Rio:VipMem:'..msg.chat_id_, result.sender_user_id_)
 DevRio:srem(David..'Rio:Cleaner:'..msg.chat_id_, result.sender_user_id_)
 elseif RioDelAll(msg.sender_user_id_,msg.chat_id_) == 'secondsudo' then
 DevRio:srem(David..'Rio:SudoBot:', result.sender_user_id_)
-DevRio:srem(David..'Rio:Owner:'..msg.chat_id_,result.sender_user_id_)
 DevRio:srem(David..'Rio:BasicConstructor:'..msg.chat_id_,result.sender_user_id_)
 DevRio:srem(David..'Rio:Constructor:'..msg.chat_id_,result.sender_user_id_)
 DevRio:srem(David..'Rio:Managers:'..msg.chat_id_, result.sender_user_id_)
@@ -4949,16 +5081,7 @@ DevRio:srem(David..'Rio:VipMem:'..msg.chat_id_, result.sender_user_id_)
 DevRio:srem(David..'Rio:Managers:'..msg.chat_id_, result.sender_user_id_)
 DevRio:srem(David..'Rio:Constructor:'..msg.chat_id_,result.sender_user_id_)
 DevRio:srem(David..'Rio:BasicConstructor:'..msg.chat_id_,result.sender_user_id_)
-DevRio:srem(David..'Rio:Owner:'..msg.chat_id_,result.sender_user_id_)
 elseif RioDelAll(msg.sender_user_id_,msg.chat_id_) == 'rioconstructor' then
-DevRio:srem(David..'Rio:Admins:'..msg.chat_id_, result.sender_user_id_)
-DevRio:srem(David..'Rio:VipMem:'..msg.chat_id_, result.sender_user_id_)
-DevRio:srem(David..'Rio:Managers:'..msg.chat_id_, result.sender_user_id_)
-DevRio:srem(David..'Rio:Constructor:'..msg.chat_id_,result.sender_user_id_)
-DevRio:srem(David..'Rio:BasicConstructor:'..msg.chat_id_,result.sender_user_id_)
-DevRio:srem(David..'Rio:Owner:'..msg.chat_id_,result.sender_user_id_)
-DevRio:srem(David..'Rio:Cleaner:'..msg.chat_id_, result.sender_user_id_)
-elseif RioDelAll(msg.sender_user_id_,msg.chat_id_) == 'owner' then
 DevRio:srem(David..'Rio:Admins:'..msg.chat_id_, result.sender_user_id_)
 DevRio:srem(David..'Rio:VipMem:'..msg.chat_id_, result.sender_user_id_)
 DevRio:srem(David..'Rio:Managers:'..msg.chat_id_, result.sender_user_id_)
@@ -4992,13 +5115,11 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, "᥀︙لاتستطيع تنزيل المطو�
 return false 
 end
 if DevRio:sismember(David..'Rio:RioSudo:',result.id_) then
-riosudo = 'المطورين الاساسيين • ' else riosudo = '' end
+Riosudo = 'المطورين الاساسيين • ' else Riosudo = '' end
 if DevRio:sismember(David..'Rio:SecondSudo:',result.id_) then
 secondsudo = 'المطورين الثانويين • ' else secondsudo = '' end
 if DevRio:sismember(David..'Rio:SudoBot:',result.id_) then
 sudobot = 'المطورين • ' else sudobot = '' end
-if DevRio:sismember(David..'Rio:Owner:'..msg.chat_id_, result.id_) then
-owner = 'المالكين • ' else owner = '' end
 if DevRio:sismember(David..'Rio:BasicConstructor:'..msg.chat_id_, result.id_) then
 basicconstructor = 'المنشئين الاساسيين • ' else basicconstructor = '' end
 if DevRio:sismember(David..'Rio:Constructor:'..msg.chat_id_, result.id_) then
@@ -5013,7 +5134,7 @@ if DevRio:sismember(David..'Rio:Cleaner:'..msg.chat_id_, result.id_) then
 cleaner = 'المنظفين • ' else cleaner = ''
 end
 if RankChecking(result.id_,msg.chat_id_) ~= false then
-ReplyStatus(msg,result.id_,"Reply","᥀︙تم تنزيله من ↫ ⤈\n~ ( "..riosudo..secondsudo..sudobot..owner..basicconstructor..constructor..manager..admins..vipmem..cleaner.." ) ~")  
+ReplyStatus(msg,result.id_,"Reply","᥀︙تم تنزيله من ↫ ⤈\n~ ( "..riosudo..secondsudo..sudobot..basicconstructor..constructor..manager..admins..vipmem..cleaner.." ) ~")  
 else 
 ReplyStatus(msg,result.id_,"Reply","᥀︙لم تتم ترقيته مسبقا")  
 end 
@@ -5021,7 +5142,6 @@ if RioDelAll(msg.sender_user_id_,msg.chat_id_) == 'sudoid' then
 DevRio:srem(David..'Rio:RioSudo:', result.id_)
 DevRio:srem(David..'Rio:SecondSudo:', result.id_)
 DevRio:srem(David..'Rio:SudoBot:', result.id_)
-DevRio:srem(David..'Rio:Owner:'..msg.chat_id_,result.id_)
 DevRio:srem(David..'Rio:BasicConstructor:'..msg.chat_id_,result.id_)
 DevRio:srem(David..'Rio:Constructor:'..msg.chat_id_,result.id_)
 DevRio:srem(David..'Rio:Managers:'..msg.chat_id_, result.id_)
@@ -5031,7 +5151,6 @@ DevRio:srem(David..'Rio:Cleaner:'..msg.chat_id_, result.id_)
 elseif RioDelAll(msg.sender_user_id_,msg.chat_id_) == 'riosudo' then
 DevRio:srem(David..'Rio:SecondSudo:', result.id_)
 DevRio:srem(David..'Rio:SudoBot:', result.id_)
-DevRio:srem(David..'Rio:Owner:'..msg.chat_id_,result.id_)
 DevRio:srem(David..'Rio:BasicConstructor:'..msg.chat_id_,result.id_)
 DevRio:srem(David..'Rio:Constructor:'..msg.chat_id_,result.id_)
 DevRio:srem(David..'Rio:Managers:'..msg.chat_id_, result.id_)
@@ -5040,7 +5159,6 @@ DevRio:srem(David..'Rio:VipMem:'..msg.chat_id_, result.id_)
 DevRio:srem(David..'Rio:Cleaner:'..msg.chat_id_, result.id_)
 elseif RioDelAll(msg.sender_user_id_,msg.chat_id_) == 'secondsudo' then
 DevRio:srem(David..'Rio:SudoBot:', result.id_)
-DevRio:srem(David..'Rio:Owner:'..msg.chat_id_,result.id_)
 DevRio:srem(David..'Rio:BasicConstructor:'..msg.chat_id_,result.id_)
 DevRio:srem(David..'Rio:Constructor:'..msg.chat_id_,result.id_)
 DevRio:srem(David..'Rio:Managers:'..msg.chat_id_, result.id_)
@@ -5053,16 +5171,8 @@ DevRio:srem(David..'Rio:VipMem:'..msg.chat_id_, result.id_)
 DevRio:srem(David..'Rio:Managers:'..msg.chat_id_, result.id_)
 DevRio:srem(David..'Rio:Constructor:'..msg.chat_id_,result.id_)
 DevRio:srem(David..'Rio:BasicConstructor:'..msg.chat_id_,result.id_)
-DevRio:srem(David..'Rio:Owner:'..msg.chat_id_,result.id_)
 DevRio:srem(David..'Rio:Cleaner:'..msg.chat_id_, result.id_)
 elseif RioDelAll(msg.sender_user_id_,msg.chat_id_) == 'rioconstructor' then
-DevRio:srem(David..'Rio:Admins:'..msg.chat_id_, result.id_)
-DevRio:srem(David..'Rio:VipMem:'..msg.chat_id_, result.id_)
-DevRio:srem(David..'Rio:Managers:'..msg.chat_id_, result.id_)
-DevRio:srem(David..'Rio:Constructor:'..msg.chat_id_,result.id_)
-DevRio:srem(David..'Rio:BasicConstructor:'..msg.chat_id_,result.id_)
-DevRio:srem(David..'Rio:Cleaner:'..msg.chat_id_, result.id_)
-elseif RioDelAll(msg.sender_user_id_,msg.chat_id_) == 'owner' then
 DevRio:srem(David..'Rio:Admins:'..msg.chat_id_, result.id_)
 DevRio:srem(David..'Rio:VipMem:'..msg.chat_id_, result.id_)
 DevRio:srem(David..'Rio:Managers:'..msg.chat_id_, result.id_)
@@ -6443,6 +6553,30 @@ return false
 end
 end
 --     Source David     --
+if msg.reply_to_message_id_ ~= 0 then
+if text and text:match("^رفع مطي$") and not DevRio:get(David..'Rio:Lock:Stupid'..msg.chat_id_) and ChCheck(msg) then
+function donky_by_reply(extra, result, success)
+if DevRio:sismember(David..'User:Donky:'..msg.chat_id_, result.sender_user_id_) then
+ReplyStatus(msg,result.sender_user_id_,"Reply","᥀︙هو مطي شرفع منه بعد😹💔") 
+else
+ReplyStatus(msg,result.sender_user_id_,"Reply","᥀︙تم رفعه في قائمة المطايه") 
+DevRio:sadd(David..'User:Donky:'..msg.chat_id_, result.sender_user_id_)
+end end
+getMessage(msg.chat_id_, msg.reply_to_message_id_,donky_by_reply)
+end end
+--     Source David     --
+if msg.reply_to_message_id_ ~= 0  then
+if text and text:match("^تنزيل مطي$") and not DevRio:get(David..'Rio:Lock:Stupid'..msg.chat_id_) and ChCheck(msg) then
+function donky_by_reply(extra, result, success)
+if not DevRio:sismember(David..'User:Donky:'..msg.chat_id_, result.sender_user_id_) then
+ReplyStatus(msg,result.sender_user_id_,"Reply","᥀︙هو ليس مطي ليتم تنزيله") 
+else
+DevRio:srem(David..'User:Donky:'..msg.chat_id_, result.sender_user_id_)
+ReplyStatus(msg,result.sender_user_id_,"Reply","᥀︙تم تنزيله من قائمة المطايه") 
+end end
+getMessage(msg.chat_id_, msg.reply_to_message_id_,donky_by_reply)
+end end
+--     Source David     --
 if Admin(msg) then
 if text and (text:match('^تقييد دقيقه (%d+)$') or text:match('^كتم دقيقه (%d+)$') or text:match('^تقيد دقيقه (%d+)$')) and ChCheck(msg) then 
 local function mut_time(extra, result,success)
@@ -6743,6 +6877,23 @@ text = "᥀︙*لا يوجد محظورين*"
 end
 Dev_Rio(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end 
+--     Source David     --
+if text == "المطايه" and ChCheck(msg) or text == "المطاية" and ChCheck(msg) then
+local List = DevRio:smembers(David..'User:Donky:'..msg.chat_id_)
+text = "᥀︙قائمة مطاية المجموعه ↫ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
+for k,v in pairs(List) do
+local username = DevRio:get(David..'Save:UserName'..v)
+if username then
+text = text..k.."~ : [@"..username.."]\n"
+else
+text = text..k.."~ : `"..v.."`\n"
+end end
+if #List == 0 then
+text = "᥀︙*لا يوجد مطايه كلها اوادم*"
+end
+Dev_Rio(msg.chat_id_, msg.id_, 1, text, 1, "md")
+end
+--     Source David     --
 if text == "قائمه المنع" and ChCheck(msg) then
 local List = DevRio:hkeys(David..'Rio:Filters:'..msg.chat_id_)
 text = "᥀︙قائمة المنع ↫ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
@@ -8689,6 +8840,10 @@ if txts[2] == 'قوانين' or txtss[2] == 'قوانين' then
 ReplyStatus(msg,msg.sender_user_id_,"ReplyBy","᥀︙تم حذف القوانين")  
 DevRio:del(David..'Rio:rules'..msg.chat_id_)
 end
+if txts[2] == 'المطايه' or txtss[2] == 'المطايه' then
+ReplyStatus(msg,msg.sender_user_id_,"ReplyBy","᥀︙تم حذف المطايه")  
+DevRio:del(David..'User:Donky:'..msg.chat_id_)
+end
 if txts[2] == 'الرابط' or txtss[2] == 'الرابط' then
 ReplyStatus(msg,msg.sender_user_id_,"ReplyBy","᥀︙تم حذف رابط المجموعه")  
 DevRio:del(David.."Rio:Groups:Links"..msg.chat_id_)
@@ -8745,31 +8900,34 @@ if text and text:match("^حذف القوائم$") and ChCheck(msg) or text and t
 if not BasicConstructor(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙للمنشئ الاساسي فقط', 1, 'md')
 else
-DevRio:del(David..'Rio:Ban:'..msg.chat_id_) DevRio:del(David..'Rio:Admins:'..msg.chat_id_) DevRio:del(David..'Rio:VipMem:'..msg.chat_id_) DevRio:del(David..'Rio:Filters:'..msg.chat_id_) DevRio:del(David..'Rio:Muted:'..msg.chat_id_)
-Dev_Rio(msg.chat_id_, msg.id_, 1, "᥀︙تم حذف ↫ ❨ قائمة المنع • المحظورين • المكتومين • الادمنيه • المميزين ❩ بنجاح \n ✓", 1, 'md')
+DevRio:del(David..'Rio:Ban:'..msg.chat_id_) DevRio:del(David..'Rio:Admins:'..msg.chat_id_) DevRio:del(David..'User:Donky:'..msg.chat_id_) DevRio:del(David..'Rio:VipMem:'..msg.chat_id_) DevRio:del(David..'Rio:Filters:'..msg.chat_id_) DevRio:del(David..'Rio:Muted:'..msg.chat_id_)
+Dev_Rio(msg.chat_id_, msg.id_, 1, "᥀︙تم حذف ↫ ❨ قائمة المنع • المحظورين • المكتومين • الادمنيه • المميزين • المطايه ❩ بنجاح \n ✓", 1, 'md')
 end end
 --     Source David     --
 if text and text:match("^حذف جميع الرتب$") and ChCheck(msg) or text and text:match("^مسح جميع الرتب$") and ChCheck(msg) or text and text:match("^تنزيل جميع الرتب$") and ChCheck(msg) then
 if not RioConstructor(msg) then
-Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙لمالك المجموعه فقط', 1, 'md')
+Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙للمالكين فقط', 1, 'md')
 else
 local basicconstructor = DevRio:smembers(David..'Rio:BasicConstructor:'..msg.chat_id_)
 local constructor = DevRio:smembers(David..'Rio:Constructor:'..msg.chat_id_)
 local Managers = DevRio:smembers(David..'Rio:Managers:'..msg.chat_id_)
 local admins = DevRio:smembers(David..'Rio:Admins:'..msg.chat_id_)
 local vipmem = DevRio:smembers(David..'Rio:VipMem:'..msg.chat_id_)
+local donky = DevRio:smembers(David..'User:Donky:'..msg.chat_id_)
 if #basicconstructor ~= 0 then basicconstructort = 'المنشئين الاساسيين • ' else basicconstructort = '' end
 if #constructor ~= 0 then constructort = 'المنشئين • ' else constructort = '' end
 if #Managers ~= 0 then Managerst = 'المدراء • ' else Managerst = '' end
 if #admins ~= 0 then adminst = 'الادمنيه • ' else adminst = '' end
 if #vipmem ~= 0 then vipmemt = 'المميزين • ' else vipmemt = '' end
-if #basicconstructor ~= 0 or #constructor ~= 0 or #Managers ~= 0 or #admins ~= 0 or #vipmem ~= 0 then 
+if #donky ~= 0 then donkyt = 'المطايه • ' else donkyt = '' end
+if #basicconstructor ~= 0 or #constructor ~= 0 or #Managers ~= 0 or #admins ~= 0 or #vipmem ~= 0 or #donky ~= 0 then 
 DevRio:del(David..'Rio:BasicConstructor:'..msg.chat_id_)
 DevRio:del(David..'Rio:Constructor:'..msg.chat_id_)
 DevRio:del(David..'Rio:Managers:'..msg.chat_id_)
 DevRio:del(David..'Rio:Admins:'..msg.chat_id_)
 DevRio:del(David..'Rio:VipMem:'..msg.chat_id_)
-Dev_Rio(msg.chat_id_, msg.id_, 1, "᥀︙تم حذف جميع الرتب التاليه ↫ ❨ "..basicconstructort..constructort..Managerst..adminst..vipmemt.." ❩ بنجاح \n ✓", 1, 'md')
+DevRio:del(David..'User:Donky:'..msg.chat_id_)
+Dev_Rio(msg.chat_id_, msg.id_, 1, "᥀︙تم حذف جميع الرتب التاليه ↫ ❨ "..basicconstructort..constructort..Managerst..adminst..vipmemt..donkyt.." ❩ بنجاح \n ✓", 1, 'md')
 else
 Dev_Rio(msg.chat_id_, msg.id_, 1, "᥀︙لاتوجد رتب هنا", 1, 'md')
 end 
