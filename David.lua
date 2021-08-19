@@ -4635,7 +4635,9 @@ end
 end
 end
 --     Source David     --
-if text and (text == '/start' or text == '↫ رجوع ᥀' or text == 'م0' or text == 'الاقسام') and ChCheck(msg) then 
+if text and (text == '/start' or text == '↫ رجوع ᥀' or text == 'م0' or text == 'الاقسام') and ChCheck(msg) then
+if not RioConstructor(msg) then
+if not DevRio:get(David.."Rio:Lock:Key"..msg.chat_id_) then 
 local Sudo_Welcome = '᥀︙اليك الازرار الخاصه بالاوامر الرئيسيه'
 local key = {
 {'↫ الردود  ᥀','↫ الرتب ᥀'},
@@ -4646,8 +4648,9 @@ local key = {
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
-end
-if text == '↫ التفعيل والتعطيل ᥀' then 
+end end end
+if text == '↫ التفعيل والتعطيل ᥀' then
+if not DevRio:get(David.."Rio:Lock:Key"..msg.chat_id_) then 
 if not Manager(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙للمدير او اعلى فقط ', 1, 'md')
 else
@@ -4663,8 +4666,9 @@ local key = {
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
-end end
+end end end
 if text == '↫ الفتح و القفل ᥀' then 
+if not DevRio:get(David.."Rio:Lock:Key"..msg.chat_id_) then 
 if not RioConstructor(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙لمالك المجموعه فقط ', 1, 'md')
 else
@@ -4677,8 +4681,9 @@ local key = {
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
-end end
+end end end
 if text == '↫ الردود  ᥀' then 
+if not DevRio:get(David.."Rio:Lock:Key"..msg.chat_id_) then 
 if not Manager(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙للمدير او اعلى فقط ', 1, 'md')
 else
@@ -4693,8 +4698,9 @@ local key = {
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
-end end
+end end end
 if text == '↫ الاوامر ᥀' then
+if not DevRio:get(David.."Rio:Lock:Key"..msg.chat_id_) then 
 if not Constructor(msg) then
 Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙للمنشئ او اعلى فقط ', 1, 'md')
 else
@@ -4704,12 +4710,13 @@ local key = {
 {'↫ ترتيب الاوامر ᥀','↫ حذف الاوامر ᥀'},
 {'↫ الاوامر المضافه ᥀'},
 {'↫ اخفاء الكيبورد ᥀'},
-{'↫ رجوع ᥀'},
+{'↫ رجوع ᥀'}
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
-end end
+end end end
 if text == '↫ الاوامر الخدميه ᥀' or text == '/play' or text == '↫  رجوع  ᥀' or text == 'اوامر الخدميه' or text == '/free' or text == 'اوامر الاعضاء' or text == 'التسليه' then
+if not DevRio:get(David.."Rio:Lock:Key"..msg.chat_id_) then 
 local Sudo_Welcome = '᥀︙اليك الازرار الخاصه بجميع اوامر الاعضاء'
 local key = {
 {'↫ اوامر التسليه ᥀','↫ الاوامر الخدميه  ᥀'},
@@ -4734,8 +4741,9 @@ local key = {
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
-end
+end end
 if text == '↫ الاوامر الخدميه  ᥀' then 
+if not DevRio:get(David.."Rio:Lock:Key"..msg.chat_id_) then 
 local Sudo_Welcome = '᥀︙اليك الازرار الخاصه بالاوامر الخدميه'
 local key = {
 {'↫ الابراج ᥀','↫ حساب العمر ᥀'},
@@ -4748,8 +4756,9 @@ local key = {
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
-end 
-if text == '↫ البوتات ᥀' then 
+end end
+if text == '↫ البوتات ᥀' then
+if not DevRio:get(David.."Rio:Lock:Key"..msg.chat_id_) then 
 local Sudo_Welcome = '᥀︙اليك الازرار الخاصه بلبوتات'
 local key = {
 {'↫ بوت الحذف ᥀','↫ بوت الهمسه ᥀'},
@@ -4760,20 +4769,22 @@ local key = {
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
-end
-if text == '↫ الرتب ᥀' then 
+end end
+if text == '↫ الرتب ᥀' then
+if not DevRio:get(David.."Rio:Lock:Key"..msg.chat_id_) then 
 local Sudo_Welcome = '᥀︙اليك الازرار الخاصه بلرتب'
 local key = {
 {'↫ المنشئين الاساسيين ᥀','↫ المنشئين ᥀'},
 {'↫ المدراء ᥀','↫ الادمنيه ᥀'},
 {'↫ المميزين ᥀','↫ حذف جميع الرتب ᥀'},
 {'↫ اخفاء الكيبورد ᥀'},
-{'↫ رجوع ᥀'},
+{'↫ رجوع ᥀'}
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
-end
-if text == '↫ اوامر النسب ᥀' then 
+end end
+if text == '↫ اوامر النسب ᥀' then
+if not DevRio:get(David.."Rio:Lock:Key"..msg.chat_id_) then 
 local Sudo_Welcome = '᥀︙اليك الازرار الخاصه بلنسب'
 local key = {
 {'↫ نسبه الكره ᥀','↫ نسبه الحب ᥀'},
@@ -4785,8 +4796,9 @@ local key = {
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
-end
+end end
 if text == '↫ العاب ᥀' then 
+if not DevRio:get(David.."Rio:Lock:Key"..msg.chat_id_) then 
 local Sudo_Welcome = '᥀︙اليك الازرار الخاصه بالالعاب'
 local key = {
 {'↫ الالعاب ᥀','↫ الالعاب المتطوره ᥀'},
@@ -4802,7 +4814,7 @@ local key = {
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
-end
+end end
 --     Source David     --
 if text and (text == "↫ غنيلي ᥀") and not DevRio:get(David..'Rio:Audios:Rio'..msg.chat_id_) and SourceCh(msg) then
 Rio = math.random(4,2824); 
@@ -10664,6 +10676,22 @@ else
 local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تعطيل اضف رد'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(David.."Rio:Lock:Rd"..msg.chat_id_,true)
+return false  
+end
+end
+if text == "تعطيل الكيبورد" and ChCheck(msg) then 
+if RioConstructor(msg) then
+local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تعطيل الكيبورد المجموعه'
+riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
+DevRio:set(David.."Rio:Lock:Key"..msg.chat_id_,"ok")
+return false  
+end
+end
+if text == "تفعيل الكيبورد" and ChCheck(msg) then 
+if RioConstructor(msg) then
+local DavidTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تفعيل الكيبورد المجموعه'
+riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DavidTeam, 14, string.len(msg.sender_user_id_))
+DevRio:del(David.."Rio:Lock:Key"..msg.chat_id_)
 return false  
 end
 end
