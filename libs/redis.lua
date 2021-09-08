@@ -212,17 +212,16 @@ if len == nil then len = '*l' end
 local line, err = client.network.socket:receive(len)
 if not err then return line else
 print("\27[36m"..[[                                           
----------------------------------------------
-|    ____             ____                  |
-|   |  _ \  _____   _|  _ \ _ __ _____  __  |
-|   | | | |/ _ \ \ / / |_) | '__/ _ \ \/ /  |
-|   | |_| |  __/\ V /|  __/| | | (_) >  <   |
-|   |____/ \___| \_/ |_|   |_|  \___/_/\_\  |
-|-------------------------------------------|
-|This Source Was Developed By (ABS) @IQ_ABS.|
-|  This Is The Source Channel @Dev_Prox .   |
-|               - DevProx -                 |
----------------------------------------------
+' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '  ' 
+'   ______       ____     __    __    _____   ______     '
+'  (_  __ \     (    )    ) )  ( (   (_   _) (_  __ \    '
+'    ) ) \ \    / /\ \   ( (    ) )    | |     ) ) \ \   '
+'   ( (   ) )  ( (__) )   \ \  / /     | |    ( (   ) )  '
+'    ) )  ) )   )    (     \ \/ /      | |     ) )  ) )  '
+'   / /__/ /   /  /\  \     \  /      _| |__  / /__/ /   ' 
+'  (______/   /__(  )__\     \/      /_____( (______/    '
+'                                                        '
+' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '  ' 
 ]]..'\27[m')
 Config = dofile("config.lua")
 DevId = Config.DevId
@@ -230,7 +229,7 @@ TokenBot = Config.TokenBot
 if DevId then
 https = require("ssl.https")
 URL = require("./libs/url.lua")  
-https.request('https://api.telegram.org/bot'..TokenBot..'/sendMessage?chat_id='..DevId..'&text='..URL.escape("⌁︙لقد توقف البوت بسبب انهاير الريدز في السيرفر افتح الترمنال وارسل ↫ ⤈\n`service redis start` ")..'&parse_mode=Markdown')
+https.request('https://api.telegram.org/bot'..TokenBot..'/sendMessage?chat_id='..DevId..'&text='..URL.escape("᥀︙لقد توقف البوت بسبب انهاير الريدز في السيرفر افتح الترمنال وارسل ↫ ⤈\n`service redis start` ")..'&parse_mode=Markdown')
 end
 os.exit()
 end
@@ -624,7 +623,7 @@ local function connect_tcp(socket, parameters)
 local host, port = parameters.host, tonumber(parameters.port)
 local ok, err = socket:connect(host, port)
 if not ok then
-print("\27[34m"..[[BY : @BGBBB:]].."\27[m")
+print("\27[34m"..[[BY : @TSTTT:]].."\27[m")
 os.exit()
 end 
 socket:setoption('tcp-nodelay', parameters.tcp_nodelay)
