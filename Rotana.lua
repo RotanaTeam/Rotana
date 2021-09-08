@@ -4492,7 +4492,7 @@ DevRio:set(Rotana..'Rio:viewget'..msg.sender_user_id_,true)
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙حسنا قم باعادة توجيه للمنشور الذي تريدني حساب مشاهداته', 1, 'md')
 end
 --     Source Rotana     --
-if text == "سورس" and ChChck(msg) or text == "السورس" and ChChck(msg) or text == "يا سورس" and ChChck(msg) or text == "↫  السورس ᥀" and ChChck(msg) then
+if text == "سورس" and ChCheck(msg) or text == "السورس" and ChCheck(msg) or text == "يا سورس" and ChCheck(msg) or text == "↫  السورس ᥀" and ChCheck(msg) then
 Text = [[
 Welcome To Source
 ↯︙[Rotana Team](https://t.me/FxxFx)
@@ -5170,7 +5170,7 @@ end
 --     Source Rotana     --
 --     Set RioSudo     --
 if Sudo(msg) then
-if text ==('اضف مطور اساسي') or text ==('رفع مطور اساسي') and ChChck(msg) then
+if text ==('اضف مطور اساسي') or text ==('رفع مطور اساسي') and ChCheck(msg) then
 function sudo_reply(extra, result, success)
 DevRio:sadd(Rotana..'Rio:RioSudo:',result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","↯︙تم رفعه في قائمة المطورين الاساسيين")  
@@ -5179,7 +5179,7 @@ if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),sudo_reply)
 end end 
-if text and (text:match('^اضف مطور اساسي @(.*)') or text:match('^رفع مطور اساسي @(.*)')) and ChChck(msg) then
+if text and (text:match('^اضف مطور اساسي @(.*)') or text:match('^رفع مطور اساسي @(.*)')) and ChCheck(msg) then
 local username = text:match('^اضف مطور اساسي @(.*)') or text:match('^رفع مطور اساسي @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
@@ -5190,14 +5190,14 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end
-if text and (text:match('^اضف مطور اساسي (%d+)') or text:match('^رفع مطور اساسي (%d+)')) and ChChck(msg) then
+if text and (text:match('^اضف مطور اساسي (%d+)') or text:match('^رفع مطور اساسي (%d+)')) and ChCheck(msg) then
 local user = text:match('اضف مطور اساسي (%d+)') or text:match('رفع مطور اساسي (%d+)')
 DevRio:sadd(Rotana..'Rio:RioSudo:',user)
 ReplyStatus(msg,user,"Reply","↯︙تم رفعه في قائمة المطورين الاساسيين")  
 end
 --     Source Rotana     --
 --     Rem SecondSudo     --
-if text ==('حذف مطور اساسي') or text ==('تنزيل مطور اساسي') and ChChck(msg) then
+if text ==('حذف مطور اساسي') or text ==('تنزيل مطور اساسي') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 DevRio:srem(Rotana..'Rio:RioSudo:',result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","↯︙تم تنزيله من قائمة المطورين الاساسيين")  
@@ -5206,7 +5206,7 @@ if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and (text:match('^حذف مطور اساسي @(.*)') or text:match('^تنزيل مطور اساسي @(.*)')) and ChChck(msg) then
+if text and (text:match('^حذف مطور اساسي @(.*)') or text:match('^تنزيل مطور اساسي @(.*)')) and ChCheck(msg) then
 local username = text:match('^حذف مطور اساسي @(.*)') or text:match('^تنزيل مطور اساسي @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
@@ -5217,7 +5217,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end
-if text and (text:match('^حذف مطور اساسي (%d+)') or text:match('^تنزيل مطور اساسي (%d+)')) and ChChck(msg) then
+if text and (text:match('^حذف مطور اساسي (%d+)') or text:match('^تنزيل مطور اساسي (%d+)')) and ChCheck(msg) then
 local user = text:match('حذف مطور اساسي (%d+)') or text:match('تنزيل مطور اساسي (%d+)')
 DevRio:srem(Rotana..'Rio:RioSudo:',user)
 ReplyStatus(msg,user,"Reply","↯︙تم تنزيله من قائمة المطورين الاساسيين")  
@@ -5225,7 +5225,7 @@ end end
 --     Source Rotana     --
 --     Set SecondSudo     --
 if RioSudo(msg) then
-if text ==('اضف مطور ثانوي') or text ==('رفع مطور ثانوي') and ChChck(msg) then
+if text ==('اضف مطور ثانوي') or text ==('رفع مطور ثانوي') and ChCheck(msg) then
 function sudo_reply(extra, result, success)
 DevRio:sadd(Rotana..'Rio:SecondSudo:',result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","↯︙تم رفعه في قائمة المطورين الثانويين")  
@@ -5233,7 +5233,7 @@ end
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),sudo_reply)
 end end 
-if text and (text:match('^اضف مطور ثانوي @(.*)') or text:match('^رفع مطور ثانوي @(.*)')) and ChChck(msg) then
+if text and (text:match('^اضف مطور ثانوي @(.*)') or text:match('^رفع مطور ثانوي @(.*)')) and ChCheck(msg) then
 local username = text:match('^اضف مطور ثانوي @(.*)') or text:match('^رفع مطور ثانوي @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
@@ -5244,14 +5244,14 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end
-if text and (text:match('^اضف مطور ثانوي (%d+)') or text:match('^رفع مطور ثانوي (%d+)')) and ChChck(msg) then
+if text and (text:match('^اضف مطور ثانوي (%d+)') or text:match('^رفع مطور ثانوي (%d+)')) and ChCheck(msg) then
 local user = text:match('اضف مطور ثانوي (%d+)') or text:match('رفع مطور ثانوي (%d+)')
 DevRio:sadd(Rotana..'Rio:SecondSudo:',user)
 ReplyStatus(msg,user,"Reply","↯︙تم رفعه في قائمة المطورين الثانويين")  
 end
 --     Source Rotana     --
 --     Rem SecondSudo     --
-if text ==('حذف مطور ثانوي') or text ==('تنزيل مطور ثانوي') and ChChck(msg) then
+if text ==('حذف مطور ثانوي') or text ==('تنزيل مطور ثانوي') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 DevRio:srem(Rotana..'Rio:SecondSudo:',result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","↯︙تم تنزيله من قائمة المطورين الثانويين")  
@@ -5259,7 +5259,7 @@ end
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and (text:match('^حذف مطور ثانوي @(.*)') or text:match('^تنزيل مطور ثانوي @(.*)')) and ChChck(msg) then
+if text and (text:match('^حذف مطور ثانوي @(.*)') or text:match('^تنزيل مطور ثانوي @(.*)')) and ChCheck(msg) then
 local username = text:match('^حذف مطور ثانوي @(.*)') or text:match('^تنزيل مطور ثانوي @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
@@ -5270,7 +5270,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end
-if text and (text:match('^حذف مطور ثانوي (%d+)') or text:match('^تنزيل مطور ثانوي (%d+)')) and ChChck(msg) then
+if text and (text:match('^حذف مطور ثانوي (%d+)') or text:match('^تنزيل مطور ثانوي (%d+)')) and ChCheck(msg) then
 local user = text:match('حذف مطور ثانوي (%d+)') or text:match('تنزيل مطور ثانوي (%d+)')
 DevRio:srem(Rotana..'Rio:SecondSudo:',user)
 ReplyStatus(msg,user,"Reply","↯︙تم تنزيله من قائمة المطورين الثانويين")  
@@ -5278,7 +5278,7 @@ end end
 --     Source Rotana     --
 --       Set SudoBot      --
 if SecondSudo(msg) then
-if text ==('اضف مطور') or text ==('رفع مطور') and ChChck(msg) then
+if text ==('اضف مطور') or text ==('رفع مطور') and ChCheck(msg) then
 function sudo_reply(extra, result, success)
 DevRio:sadd(Rotana..'Rio:SudoBot:',result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","↯︙تم رفعه في قائمة المطورين")  
@@ -5286,7 +5286,7 @@ end
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),sudo_reply)
 end end 
-if text and (text:match('^اضف مطور @(.*)') or text:match('^رفع مطور @(.*)')) and ChChck(msg) then
+if text and (text:match('^اضف مطور @(.*)') or text:match('^رفع مطور @(.*)')) and ChCheck(msg) then
 local username = text:match('^اضف مطور @(.*)') or text:match('^رفع مطور @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
@@ -5297,14 +5297,14 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end
-if text and (text:match('^اضف مطور (%d+)') or text:match('^رفع مطور (%d+)')) and ChChck(msg) then
+if text and (text:match('^اضف مطور (%d+)') or text:match('^رفع مطور (%d+)')) and ChCheck(msg) then
 local user = text:match('اضف مطور (%d+)') or text:match('رفع مطور (%d+)')
 DevRio:sadd(Rotana..'Rio:SudoBot:',user)
 ReplyStatus(msg,user,"Reply","↯︙تم رفعه في قائمة المطورين")  
 end
 --     Source Rotana     --
 --       Rem SudoBot      --
-if text ==('حذف مطور') or text ==('تنزيل مطور') and ChChck(msg) then
+if text ==('حذف مطور') or text ==('تنزيل مطور') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 DevRio:srem(Rotana..'Rio:SudoBot:',result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","↯︙تم تنزيله من قائمة المطورين")  
@@ -5312,7 +5312,7 @@ end
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and (text:match('^حذف مطور @(.*)') or text:match('^تنزيل مطور @(.*)')) and ChChck(msg) then
+if text and (text:match('^حذف مطور @(.*)') or text:match('^تنزيل مطور @(.*)')) and ChCheck(msg) then
 local username = text:match('^حذف مطور @(.*)') or text:match('^تنزيل مطور @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
@@ -5323,7 +5323,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end
-if text and (text:match('^حذف مطور (%d+)') or text:match('^تنزيل مطور (%d+)')) and ChChck(msg) then
+if text and (text:match('^حذف مطور (%d+)') or text:match('^تنزيل مطور (%d+)')) and ChCheck(msg) then
 local user = text:match('حذف مطور (%d+)') or text:match('تنزيل مطور (%d+)')
 DevRio:srem(Rotana..'Rio:SudoBot:',user)
 ReplyStatus(msg,user,"Reply","↯︙تم تنزيله من قائمة المطورين")  
@@ -5332,7 +5332,7 @@ end end
 --   Set RioConstructor   --
 if ChatType == 'sp' or ChatType == 'gp'  then
 if SudoBot(msg) then
-if text ==('رفع مالك') and ChChck(msg) then
+if text ==('رفع مالك') and ChCheck(msg) then
 function raf_reply(extra, result, success)
 DevRio:sadd(Rotana..'Rio:Owner:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","↯︙تم رفعه مالك")  
@@ -5340,7 +5340,7 @@ end
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),raf_reply)
 end end
-if text and text:match('^رفع مالك @(.*)') and ChChck(msg) then
+if text and text:match('^رفع مالك @(.*)') and ChCheck(msg) then
 local username = text:match('^رفع مالك @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
@@ -5351,14 +5351,14 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end
-if text and text:match('^رفع مالك (%d+)') and ChChck(msg) then
+if text and text:match('^رفع مالك (%d+)') and ChCheck(msg) then
 local user = text:match('رفع مالك (%d+)')
 DevRio:sadd(Rotana..'Rio:Owner:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","↯︙تم رفعه مالك")  
 end
 --     Source Rotana     --
 --   Rem RioConstructor   --
-if text ==('تنزيل مالك') and ChChck(msg) then
+if text ==('تنزيل مالك') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
 local admins = data.members_
@@ -5376,7 +5376,7 @@ if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end 
 end
-if text and text:match('^تنزيل مالك @(.*)') and ChChck(msg) then
+if text and text:match('^تنزيل مالك @(.*)') and ChCheck(msg) then
 local username = text:match('^تنزيل مالك @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
@@ -5396,7 +5396,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end
-if text and text:match('^تنزيل مالك (%d+)') and ChChck(msg) then
+if text and text:match('^تنزيل مالك (%d+)') and ChCheck(msg) then
 local user = text:match('تنزيل مالك (%d+)')
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
 local admins = data.members_
@@ -5413,7 +5413,7 @@ end end
 --     Source Rotana     --
 --  Set BasicConstructor  --
 if Owner(msg) then
-if text ==('رفع منشئ اساسي') and ChChck(msg) then
+if text ==('رفع منشئ اساسي') and ChCheck(msg) then
 function raf_reply(extra, result, success)
 if not RioConstructor(msg) and DevRio:get(Rotana.."Rio:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1,'↯︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
@@ -5425,7 +5425,7 @@ end
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),raf_reply)
 end end
-if text and text:match('^رفع منشئ اساسي @(.*)') and ChChck(msg) then
+if text and text:match('^رفع منشئ اساسي @(.*)') and ChCheck(msg) then
 local username = text:match('^رفع منشئ اساسي @(.*)')
 function promreply(extra,result,success)
 if not RioConstructor(msg) and DevRio:get(Rotana.."Rio:Lock:ProSet"..msg.chat_id_) then 
@@ -5440,7 +5440,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end
-if text and text:match('^رفع منشئ اساسي (%d+)') and ChChck(msg) then
+if text and text:match('^رفع منشئ اساسي (%d+)') and ChCheck(msg) then
 local user = text:match('رفع منشئ اساسي (%d+)')
 if not RioConstructor(msg) and DevRio:get(Rotana.."Rio:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1,'↯︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
@@ -5451,7 +5451,7 @@ ReplyStatus(msg,user,"Reply","↯︙تم رفعه منشئ اساسي")
 end
 --     Source Rotana     --
 --  Rem BasicConstructor  --
-if text ==('تنزيل منشئ اساسي') and ChChck(msg) then
+if text ==('تنزيل منشئ اساسي') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 DevRio:srem(Rotana..'Rio:BasicConstructor:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","↯︙تم تنزيله منشئ اساسي")  
@@ -5459,7 +5459,7 @@ end
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^تنزيل منشئ اساسي @(.*)') and ChChck(msg) then
+if text and text:match('^تنزيل منشئ اساسي @(.*)') and ChCheck(msg) then
 local username = text:match('^تنزيل منشئ اساسي @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
@@ -5470,7 +5470,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end
-if text and text:match('^تنزيل منشئ اساسي (%d+)') and ChChck(msg) then
+if text and text:match('^تنزيل منشئ اساسي (%d+)') and ChCheck(msg) then
 local user = text:match('تنزيل منشئ اساسي (%d+)')
 DevRio:srem(Rotana..'Rio:BasicConstructor:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","↯︙تم تنزيله منشئ اساسي")  
@@ -5481,7 +5481,7 @@ end
 --     Source Rotana     --
 --    Set  Constructor    --
 if BasicConstructor(msg) then
-if text ==('رفع منشئ') and ChChck(msg) then
+if text ==('رفع منشئ') and ChCheck(msg) then
 function raf_reply(extra, result, success)
 if not RioConstructor(msg) and DevRio:get(Rotana.."Rio:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1,'↯︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
@@ -5493,7 +5493,7 @@ end
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),raf_reply)
 end end
-if text and text:match('^رفع منشئ @(.*)') and ChChck(msg) then
+if text and text:match('^رفع منشئ @(.*)') and ChCheck(msg) then
 local username = text:match('^رفع منشئ @(.*)')
 function promreply(extra,result,success)
 if not RioConstructor(msg) and DevRio:get(Rotana.."Rio:Lock:ProSet"..msg.chat_id_) then 
@@ -5508,7 +5508,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end
-if text and text:match('^رفع منشئ (%d+)') and ChChck(msg) then
+if text and text:match('^رفع منشئ (%d+)') and ChCheck(msg) then
 local user = text:match('رفع منشئ (%d+)')
 if not RioConstructor(msg) and DevRio:get(Rotana.."Rio:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1,'↯︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
@@ -5519,7 +5519,7 @@ ReplyStatus(msg,user,"Reply","↯︙تم رفعه في قائمة المنشئي
 end
 --     Source Rotana     --
 --    Rem  Constructor    --
-if text ==('تنزيل منشئ') and ChChck(msg) then
+if text ==('تنزيل منشئ') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 DevRio:srem(Rotana..'Rio:Constructor:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","↯︙تم تنزيله من قائمة المنشئين")  
@@ -5527,7 +5527,7 @@ end
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^تنزيل منشئ @(.*)') and ChChck(msg) then
+if text and text:match('^تنزيل منشئ @(.*)') and ChCheck(msg) then
 local username = text:match('^تنزيل منشئ @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
@@ -5538,7 +5538,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end
-if text and text:match('^تنزيل منشئ (%d+)') and ChChck(msg) then
+if text and text:match('^تنزيل منشئ (%d+)') and ChCheck(msg) then
 local user = text:match('تنزيل منشئ (%d+)')
 DevRio:srem(Rotana..'Rio:Constructor:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","↯︙تم تنزيله من قائمة المنشئين")  
@@ -5547,7 +5547,7 @@ end
 --     Source Rotana     --
 --      Set Manager       --
 if Constructor(msg) then
-if text ==('رفع مدير') and ChChck(msg) then
+if text ==('رفع مدير') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 if not RioConstructor(msg) and DevRio:get(Rotana.."Rio:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1,'↯︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
@@ -5559,7 +5559,7 @@ end
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^رفع مدير @(.*)') and ChChck(msg) then
+if text and text:match('^رفع مدير @(.*)') and ChCheck(msg) then
 local username = text:match('^رفع مدير @(.*)')
 function promreply(extra,result,success)
 if not RioConstructor(msg) and DevRio:get(Rotana.."Rio:Lock:ProSet"..msg.chat_id_) then 
@@ -5574,7 +5574,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end 
-if text and text:match('^رفع مدير (%d+)') and ChChck(msg) then
+if text and text:match('^رفع مدير (%d+)') and ChCheck(msg) then
 local user = text:match('رفع مدير (%d+)')
 if not RioConstructor(msg) and DevRio:get(Rotana.."Rio:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1,'↯︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
@@ -5585,7 +5585,7 @@ ReplyStatus(msg,user,"Reply","↯︙تم رفعه في قائمة المدراء
 end
 --     Source Rotana     --
 --       Rem Manager      --
-if text ==('تنزيل مدير') and ChChck(msg) then
+if text ==('تنزيل مدير') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 DevRio:srem(Rotana..'Rio:Managers:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","↯︙تم تنزيله من قائمة المدراء")  
@@ -5593,7 +5593,7 @@ end
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^تنزيل مدير @(.*)') and ChChck(msg) then
+if text and text:match('^تنزيل مدير @(.*)') and ChCheck(msg) then
 local username = text:match('^تنزيل مدير @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
@@ -5604,14 +5604,14 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end
-if text and text:match('^تنزيل مدير (%d+)') and ChChck(msg) then
+if text and text:match('^تنزيل مدير (%d+)') and ChCheck(msg) then
 local user = text:match('تنزيل مدير (%d+)')
 DevRio:srem(Rotana..'Rio:Managers:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","↯︙تم تنزيله من قائمة المدراء")  
 end 
 --     Source Rotana     --
 --       Set Cleaner      --
-if text ==('رفع منظف') and ChChck(msg) then
+if text ==('رفع منظف') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 if not RioConstructor(msg) and DevRio:get(Rotana.."Rio:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1,'↯︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
@@ -5623,7 +5623,7 @@ end
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^رفع منظف @(.*)') and ChChck(msg) then
+if text and text:match('^رفع منظف @(.*)') and ChCheck(msg) then
 local username = text:match('^رفع منظف @(.*)')
 function promreply(extra,result,success)
 if not RioConstructor(msg) and DevRio:get(Rotana.."Rio:Lock:ProSet"..msg.chat_id_) then 
@@ -5638,7 +5638,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end
-if text and text:match('^رفع منظف (%d+)') and ChChck(msg) then
+if text and text:match('^رفع منظف (%d+)') and ChCheck(msg) then
 local user = text:match('رفع منظف (%d+)')
 if not RioConstructor(msg) and DevRio:get(Rotana.."Rio:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1,'↯︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
@@ -5649,7 +5649,7 @@ ReplyStatus(msg,user,"Reply","↯︙تم رفعه في قائمة المنظفي
 end
 --     Source Rotana     --
 --       Rem Cleaner      --
-if text ==('تنزيل منظف') and ChChck(msg) then
+if text ==('تنزيل منظف') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 DevRio:srem(Rotana..'Rio:Cleaner:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","↯︙تم تنزيله من قائمة المنظفين")  
@@ -5657,7 +5657,7 @@ end
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^تنزيل منظف @(.*)') and ChChck(msg) then
+if text and text:match('^تنزيل منظف @(.*)') and ChCheck(msg) then
 local username = text:match('^تنزيل منظف @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
@@ -5668,7 +5668,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end
-if text and text:match('^تنزيل منظف (%d+)') and ChChck(msg) then
+if text and text:match('^تنزيل منظف (%d+)') and ChCheck(msg) then
 local user = text:match('تنزيل منظف (%d+)')
 DevRio:srem(Rotana..'Rio:Cleaner:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","↯︙تم تنزيله من قائمة المنظفين")  
@@ -5676,7 +5676,7 @@ end end
 --     Source Rotana     --
 --       Set admin        --
 if Manager(msg) then
-if text ==('رفع ادمن') and ChChck(msg) then
+if text ==('رفع ادمن') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 if not RioConstructor(msg) and DevRio:get(Rotana.."Rio:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1,'↯︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
@@ -5688,7 +5688,7 @@ end
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^رفع ادمن @(.*)') and ChChck(msg) then
+if text and text:match('^رفع ادمن @(.*)') and ChCheck(msg) then
 local username = text:match('^رفع ادمن @(.*)')
 function promreply(extra,result,success)
 if not RioConstructor(msg) and DevRio:get(Rotana.."Rio:Lock:ProSet"..msg.chat_id_) then 
@@ -5703,7 +5703,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end
-if text and text:match('^رفع ادمن (%d+)') and ChChck(msg) then
+if text and text:match('^رفع ادمن (%d+)') and ChCheck(msg) then
 local user = text:match('رفع ادمن (%d+)')
 if not RioConstructor(msg) and DevRio:get(Rotana.."Rio:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1,'↯︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
@@ -5714,7 +5714,7 @@ ReplyStatus(msg,user,"Reply","↯︙تم رفعه في قائمة الادمني
 end
 --     Source Rotana     --
 --        Rem admin       --
-if text ==('تنزيل ادمن') and ChChck(msg) then
+if text ==('تنزيل ادمن') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 DevRio:srem(Rotana..'Rio:Admins:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","↯︙تم تنزيله من قائمة الادمنيه")  
@@ -5722,7 +5722,7 @@ end
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^تنزيل ادمن @(.*)') and ChChck(msg) then
+if text and text:match('^تنزيل ادمن @(.*)') and ChCheck(msg) then
 local username = text:match('^تنزيل ادمن @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
@@ -5733,7 +5733,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end
-if text and text:match('^تنزيل ادمن (%d+)') and ChChck(msg) then
+if text and text:match('^تنزيل ادمن (%d+)') and ChCheck(msg) then
 local user = text:match('تنزيل ادمن (%d+)')
 DevRio:srem(Rotana..'Rio:Admins:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","↯︙تم تنزيله من قائمة الادمنيه")  
@@ -5741,7 +5741,7 @@ end end
 --     Source Rotana     --
 --       Set Vipmem       --
 if Admin(msg) then
-if text ==('رفع مميز') and ChChck(msg) then
+if text ==('رفع مميز') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 if not RioConstructor(msg) and DevRio:get(Rotana.."Rio:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1,'↯︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
@@ -5753,7 +5753,7 @@ end
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^رفع مميز @(.*)') and ChChck(msg) then
+if text and text:match('^رفع مميز @(.*)') and ChCheck(msg) then
 local username = text:match('^رفع مميز @(.*)')
 function promreply(extra,result,success)
 if not RioConstructor(msg) and DevRio:get(Rotana.."Rio:Lock:ProSet"..msg.chat_id_) then 
@@ -5768,7 +5768,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end
-if text and text:match('^رفع مميز (%d+)') and ChChck(msg) then
+if text and text:match('^رفع مميز (%d+)') and ChCheck(msg) then
 local user = text:match('رفع مميز (%d+)')
 if not RioConstructor(msg) and DevRio:get(Rotana.."Rio:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1,'↯︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
@@ -5779,7 +5779,7 @@ ReplyStatus(msg,user,"Reply","↯︙تم رفعه في قائمة المميزي
 end
 --     Source Rotana     --
 --       Rem Vipmem       --
-if text ==('تنزيل مميز') and ChChck(msg) then
+if text ==('تنزيل مميز') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 DevRio:srem(Rotana..'Rio:VipMem:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","↯︙تم تنزيله من قائمة المميزين")  
@@ -5787,7 +5787,7 @@ end
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^تنزيل مميز @(.*)') and ChChck(msg) then
+if text and text:match('^تنزيل مميز @(.*)') and ChCheck(msg) then
 local username = text:match('^تنزيل مميز @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
@@ -5798,7 +5798,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙*المعرف غير صحيح*', 1, 'md
 end end 
 resolve_username(username,promreply)
 end
-if text and text:match('^تنزيل مميز (%d+)') and ChChck(msg) then
+if text and text:match('^تنزيل مميز (%d+)') and ChCheck(msg) then
 local user = text:match('تنزيل مميز (%d+)')
 DevRio:srem(Rotana..'Rio:VipMem:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","↯︙تم تنزيله من قائمة المميزين")  
@@ -9317,7 +9317,7 @@ riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, RotanaTeam, 14, string.len(
 DevRio:set(Rotana..'Rio:Mean:Rio'..msg.chat_id_,true)  
 end
 if not DevRio:get(Rotana..'Rio:Mean:Rio'..msg.chat_id_) then
-if text and text:match("^معنى الاسم (.*)$") and ChChck(msg) or text and text:match("^معنى اسم (.*)$") and ChChck(msg) then 
+if text and text:match("^معنى الاسم (.*)$") and ChCheck(msg) or text and text:match("^معنى اسم (.*)$") and ChCheck(msg) then 
 local TextMean = text:match("^معنى الاسم (.*)$") or text:match("^معنى اسم (.*)$") 
 UrlMean = https.request('https://apiabs.ml/Mean.php?Abs='..URL.escape(TextMean)) 
 Mean = JSON.decode(UrlMean) 
@@ -9326,17 +9326,17 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, t, 1, 'html')
 end
 end
 --     Source Rotana     --
-if text == "تفعيل متحركه" and Manager(msg) and ChChck(msg) or text == "تفعيل المتحركه" and Manager(msg) and ChChck(msg) then
+if text == "تفعيل متحركه" and Manager(msg) and ChCheck(msg) or text == "تفعيل المتحركه" and Manager(msg) and ChCheck(msg) then
 local RotanaTeam = '↯︙اهلا عزيزي ↫ '..RioRank(msg)..' \n↯︙تم تفعيل المتحركه'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, RotanaTeam, 14, string.len(msg.sender_user_id_))
 DevRio:del(Rotana..'Rio:gif:Rio'..msg.chat_id_) 
 end
-if text == "تعطيل متحركه" and Manager(msg) and ChChck(msg) or text == "تعطيل المتحركه" and Manager(msg) and ChChck(msg) then
+if text == "تعطيل متحركه" and Manager(msg) and ChCheck(msg) or text == "تعطيل المتحركه" and Manager(msg) and ChCheck(msg) then
 local RotanaTeam = '↯︙اهلا عزيزي ↫ '..RioRank(msg)..' \n↯︙تم تعطيل المتحركه'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, RotanaTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(Rotana..'Rio:gif:Rio'..msg.chat_id_,true)  
 end
-if text and (text == "متحركه" or text == "↫ متحركه ᥀") and not DevRio:get(Rotana..'Rio:gif:Rio'..msg.chat_id_) and ChChck(msg) then
+if text and (text == "متحركه" or text == "↫ متحركه ᥀") and not DevRio:get(Rotana..'Rio:gif:Rio'..msg.chat_id_) and ChCheck(msg) then
 Rio = math.random(2,1075); 
 local Text ='*↯︙تم اختيار المتحركه لك*'
 keyboard = {}  
@@ -9347,17 +9347,17 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendanimation?chat_id=' .. msg.chat_id_ .. '&animation=https://t.me/GifRotana/'..Rio..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --     Source Rotana     --
-if text == "تفعيل ميمز" and Manager(msg) and ChChck(msg) or text == "تفعيل الميمز" and Manager(msg) and ChChck(msg) then
+if text == "تفعيل ميمز" and Manager(msg) and ChCheck(msg) or text == "تفعيل الميمز" and Manager(msg) and ChCheck(msg) then
 local RotanaTeam = '↯︙اهلا عزيزي ↫ '..RioRank(msg)..' \n↯︙تم تفعيل الميمز'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, RotanaTeam, 14, string.len(msg.sender_user_id_))
 DevRio:del(Rotana..'Rio:memz:Rio'..msg.chat_id_) 
 end
-if text == "تعطيل ميمز" and Manager(msg) and ChChck(msg) or text == "تعطيل الميمز" and Manager(msg) and ChChck(msg) then
+if text == "تعطيل ميمز" and Manager(msg) and ChCheck(msg) or text == "تعطيل الميمز" and Manager(msg) and ChCheck(msg) then
 local RotanaTeam = '↯︙اهلا عزيزي ↫ '..RioRank(msg)..' \n↯︙تم تعطيل الميمز'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, RotanaTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(Rotana..'Rio:memz:Rio'..msg.chat_id_,true)  
 end
-if text and (text == "ميمز" or text == "↫ ميمز ᥀") and not DevRio:get(Rotana..'Rio:memz:Rio'..msg.chat_id_) and ChChck(msg) then
+if text and (text == "ميمز" or text == "↫ ميمز ᥀") and not DevRio:get(Rotana..'Rio:memz:Rio'..msg.chat_id_) and ChCheck(msg) then
 Rio = math.random(2,1201); 
 local Text ='*↯︙تم اختيار مقطع الميمز لك*'
 keyboard = {}  
@@ -9368,17 +9368,17 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice=https://t.me/MemzRotana/'..Rio..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --     Source Rotana     --
-if text == "تفعيل غنيلي" and Manager(msg) and ChChck(msg) then
+if text == "تفعيل غنيلي" and Manager(msg) and ChCheck(msg) then
 local RotanaTeam = '↯︙اهلا عزيزي ↫ '..RioRank(msg)..' \n↯︙تم تفعيل غنيلي'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, RotanaTeam, 14, string.len(msg.sender_user_id_))
 DevRio:del(Rotana..'Rio:Audios:Rio'..msg.chat_id_) 
 end
-if text == "تعطيل غنيلي" and Manager(msg) and ChChck(msg) then
+if text == "تعطيل غنيلي" and Manager(msg) and ChCheck(msg) then
 local RotanaTeam = '↯︙اهلا عزيزي ↫ '..RioRank(msg)..' \n↯︙تم تعطيل غنيلي'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, RotanaTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(Rotana..'Rio:Audios:Rio'..msg.chat_id_,true)  
 end
-if text and (text == "غنيلي" or text == "↫ غنيلي ᥀") and not DevRio:get(Rotana..'Rio:Audios:Rio'..msg.chat_id_) and ChChck(msg) then
+if text and (text == "غنيلي" or text == "↫ غنيلي ᥀") and not DevRio:get(Rotana..'Rio:Audios:Rio'..msg.chat_id_) and ChCheck(msg) then
 Rio = math.random(4,2824); 
 local Text ='*↯︙تم اختيار المقطع الصوتي لك*'
 keyboard = {}  
@@ -9389,17 +9389,17 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice=https://t.me/AudiosRotana/'..Rio..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --     Source Rotana     --
-if text == "تفعيل الاغاني" and Manager(msg) and ChChck(msg) or text == "تفعيل اغنيه" and Manager(msg) and ChChck(msg) then
+if text == "تفعيل الاغاني" and Manager(msg) and ChCheck(msg) or text == "تفعيل اغنيه" and Manager(msg) and ChCheck(msg) then
 local RotanaTeam = '↯︙اهلا عزيزي ↫ '..RioRank(msg)..' \n↯︙تم تفعيل الاغاني'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, RotanaTeam, 14, string.len(msg.sender_user_id_))
 DevRio:del(Rotana..'Rio:mp3:Rio'..msg.chat_id_) 
 end
-if text == "تعطيل الاغاني" and Manager(msg) and ChChck(msg) or text == "تعطيل اغنيه" and Manager(msg) and ChChck(msg) then
+if text == "تعطيل الاغاني" and Manager(msg) and ChCheck(msg) or text == "تعطيل اغنيه" and Manager(msg) and ChCheck(msg) then
 local RotanaTeam = '↯︙اهلا عزيزي ↫ '..RioRank(msg)..' \n↯︙تم تعطيل الاغاني'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, RotanaTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(Rotana..'Rio:mp3:Rio'..msg.chat_id_,true)  
 end
-if text and (text == "اغنيه" or text == "↫ اغنيه ᥀" or text == "اغاني") and not DevRio:get(Rotana..'Rio:mp3:Rio'..msg.chat_id_) and ChChck(msg) then
+if text and (text == "اغنيه" or text == "↫ اغنيه ᥀" or text == "اغاني") and not DevRio:get(Rotana..'Rio:mp3:Rio'..msg.chat_id_) and ChCheck(msg) then
 Rio = math.random(2,1167); 
 local Text ='*↯︙تم اختيار الاغنيه لك*'
 keyboard = {}  
@@ -9410,17 +9410,17 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice=https://t.me/RotanaMp3/'..Rio..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --     Source Rotana     --
-if text == "تفعيل ريمكس" and Manager(msg) and ChChck(msg) or text == "تفعيل الريمكس" and Manager(msg) and ChChck(msg) then
+if text == "تفعيل ريمكس" and Manager(msg) and ChCheck(msg) or text == "تفعيل الريمكس" and Manager(msg) and ChCheck(msg) then
 local RotanaTeam = '↯︙اهلا عزيزي ↫ '..RioRank(msg)..' \n↯︙تم تفعيل الريمكس'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, RotanaTeam, 14, string.len(msg.sender_user_id_))
 DevRio:del(Rotana..'Rio:Remix:Rio'..msg.chat_id_) 
 end
-if text == "تعطيل ريمكس" and Manager(msg) and ChChck(msg) or text == "تعطيل الريمكس" and Manager(msg) and ChChck(msg) then
+if text == "تعطيل ريمكس" and Manager(msg) and ChCheck(msg) or text == "تعطيل الريمكس" and Manager(msg) and ChCheck(msg) then
 local RotanaTeam = '↯︙اهلا عزيزي ↫ '..RioRank(msg)..' \n↯︙تم تعطيل الريمكس'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, RotanaTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(Rotana..'Rio:Remix:Rio'..msg.chat_id_,true)  
 end
-if text and (text == "ريمكس" or text == "↫ ريمكس ᥀") and not DevRio:get(Rotana..'Rio:Remix:Rio'..msg.chat_id_) and ChChck(msg) then
+if text and (text == "ريمكس" or text == "↫ ريمكس ᥀") and not DevRio:get(Rotana..'Rio:Remix:Rio'..msg.chat_id_) and ChCheck(msg) then
 Rio = math.random(2,612); 
 local Text ='*↯︙تم اختيار الريمكس لك*'
 keyboard = {}  
@@ -9431,17 +9431,17 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice=https://t.me/RemixRotana/'..Rio..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --     Source Rotana     --
-if text == "تفعيل صوره" and Manager(msg) and ChChck(msg) or text == "تفعيل الصوره" and Manager(msg) and ChChck(msg) then
+if text == "تفعيل صوره" and Manager(msg) and ChCheck(msg) or text == "تفعيل الصوره" and Manager(msg) and ChCheck(msg) then
 local RotanaTeam = '↯︙اهلا عزيزي ↫ '..RioRank(msg)..' \n↯︙تم تفعيل الصوره'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, RotanaTeam, 14, string.len(msg.sender_user_id_))
 DevRio:del(Rotana..'Rio:Photo:Rio'..msg.chat_id_) 
 end
-if text == "تعطيل صوره" and Manager(msg) and ChChck(msg) or text == "تعطيل الصوره" and Manager(msg) and ChChck(msg) then
+if text == "تعطيل صوره" and Manager(msg) and ChCheck(msg) or text == "تعطيل الصوره" and Manager(msg) and ChCheck(msg) then
 local RotanaTeam = '↯︙اهلا عزيزي ↫ '..RioRank(msg)..' \n↯︙تم تعطيل الصوره'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, RotanaTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(Rotana..'Rio:Photo:Rio'..msg.chat_id_,true)  
 end
-if text and (text == "صوره" or text == "↫ صوره ᥀") and not DevRio:get(Rotana..'Rio:Photo:Rio'..msg.chat_id_) and ChChck(msg) then
+if text and (text == "صوره" or text == "↫ صوره ᥀") and not DevRio:get(Rotana..'Rio:Photo:Rio'..msg.chat_id_) and ChCheck(msg) then
 Rio = math.random(4,1171); 
 local Text ='*↯︙تم اختيار الصوره لك*'
 keyboard = {}  
@@ -9452,17 +9452,17 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/PhotosRotana/'..Rio..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --     Source Rotana     --
-if text == "تفعيل انمي" and Manager(msg) and ChChck(msg) or text == "تفعيل الانمي" and Manager(msg) and ChChck(msg) then
+if text == "تفعيل انمي" and Manager(msg) and ChCheck(msg) or text == "تفعيل الانمي" and Manager(msg) and ChCheck(msg) then
 local RotanaTeam = '↯︙اهلا عزيزي ↫ '..RioRank(msg)..' \n↯︙تم تفعيل الانمي'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, RotanaTeam, 14, string.len(msg.sender_user_id_))
 DevRio:del(Rotana..'Rio:Anime:Rio'..msg.chat_id_) 
 end
-if text == "تعطيل انمي" and Manager(msg) and ChChck(msg) or text == "تعطيل الانمي" and Manager(msg) and ChChck(msg) then
+if text == "تعطيل انمي" and Manager(msg) and ChCheck(msg) or text == "تعطيل الانمي" and Manager(msg) and ChCheck(msg) then
 local RotanaTeam = '↯︙اهلا عزيزي ↫ '..RioRank(msg)..' \n↯︙تم تعطيل الانمي'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, RotanaTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(Rotana..'Rio:Anime:Rio'..msg.chat_id_,true)  
 end
-if text and (text == "انمي" or text == "↫ انمي ᥀") and not DevRio:get(Rotana..'Rio:Anime:Rio'..msg.chat_id_) and ChChck(msg) then
+if text and (text == "انمي" or text == "↫ انمي ᥀") and not DevRio:get(Rotana..'Rio:Anime:Rio'..msg.chat_id_) and ChCheck(msg) then
 Rio = math.random(3,1002); 
 local Text ='*↯︙تم اختيار صورة الانمي لك*'
 keyboard = {}  
@@ -9473,12 +9473,12 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/AnimeRotana/'..Rio..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --     Source Rotana     --
-if text == "تفعيل فلم" and Manager(msg) and ChChck(msg) then
+if text == "تفعيل فلم" and Manager(msg) and ChCheck(msg) then
 local RotanaTeam = '↯︙اهلا عزيزي ↫ '..RioRank(msg)..' \n↯︙تم تفعيل الافلام'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, RotanaTeam, 14, string.len(msg.sender_user_id_))
 DevRio:del(Rotana..'Rio:Movies:Rio'..msg.chat_id_) 
 end
-if text == "تعطيل فلم" and Manager(msg) and ChChck(msg) then
+if text == "تعطيل فلم" and Manager(msg) and ChCheck(msg) then
 local RotanaTeam = '↯︙اهلا عزيزي ↫ '..RioRank(msg)..' \n↯︙تم تعطيل الافلام'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, RotanaTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(Rotana..'Rio:Movies:Rio'..msg.chat_id_,true)  
@@ -9494,17 +9494,17 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/MoviesRotana/'..Rio..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --     Source Rotana     --
-if text == "تفعيل مسلسل" and Manager(msg) and ChChck(msg) then
+if text == "تفعيل مسلسل" and Manager(msg) and ChCheck(msg) then
 local RotanaTeam = '↯︙اهلا عزيزي ↫ '..RioRank(msg)..' \n↯︙تم تفعيل المسلسلات'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, RotanaTeam, 14, string.len(msg.sender_user_id_))
 DevRio:del(Rotana..'Rio:Series:Rio'..msg.chat_id_) 
 end
-if text == "تعطيل مسلسل" and Manager(msg) and ChChck(msg) then
+if text == "تعطيل مسلسل" and Manager(msg) and ChCheck(msg) then
 local RotanaTeam = '↯︙اهلا عزيزي ↫ '..RioRank(msg)..' \n↯︙تم تعطيل المسلسلات'
 riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, RotanaTeam, 14, string.len(msg.sender_user_id_))
 DevRio:set(Rotana..'Rio:Series:Rio'..msg.chat_id_,true)  
 end
-if text and (text == "مسلسل" or text == "↫ مسلسل ᥀") and not DevRio:get(Rotana..'Rio:Series:Rio'..msg.chat_id_) and ChChck(msg) then
+if text and (text == "مسلسل" or text == "↫ مسلسل ᥀") and not DevRio:get(Rotana..'Rio:Series:Rio'..msg.chat_id_) and ChCheck(msg) then
 Rio = math.random(2,54); 
 local Text ='*↯︙تم اختيار المسلسل لك*'
 keyboard = {}  
@@ -11181,7 +11181,7 @@ Dev_Rio(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
 end
 --     Source Rotana     --
 if SecondSudo(msg) then
-if text == "تحديث السورس" and ChChck(msg) or text == "تحديث سورس" and ChChck(msg) or text == "↫ تحديث السورس ᥀" and ChChck(msg) then 
+if text == "تحديث السورس" and ChCheck(msg) or text == "تحديث سورس" and ChCheck(msg) or text == "↫ تحديث السورس ᥀" and ChCheck(msg) then 
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙جاري تحديث سورس روتانا', 1, 'md') 
 os.execute('rm -rf Rotana.lua') 
 os.execute('wget https://raw.githubusercontent.com/RotanaTeam/Rotana/master/Rotana.lua') 
@@ -11190,7 +11190,7 @@ io.popen("rm -rf ../.telegram-cli/*")
 print("\27[31;47m\n          ( تم تحديث السورس )          \n\27[0;34;49m\n") 
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙تم التحديث الى الاصدار الجديد', 1, 'md') 
 end
-if text == 'تحديث' and ChChck(msg) or text == 'تحديث البوت' and ChChck(msg) or text == '↫ تحديث ᥀' and ChChck(msg) then  
+if text == 'تحديث' and ChCheck(msg) or text == 'تحديث البوت' and ChCheck(msg) or text == '↫ تحديث ᥀' and ChCheck(msg) then  
 dofile('Rotana.lua') 
 io.popen("rm -rf ../.telegram-cli/*")
 print("\27[31;47m\n        ( تم تحديث ملفات البوت )        \n\27[0;34;49m\n") 
@@ -11362,7 +11362,7 @@ else
 Dev_Rio(msg.chat_id_, msg.id_, 1, '↯︙لم يتم تعيين قناة الاشتراك الاجباري \n↯︙ارسل ↫ تعيين قناة الاشتراك للتعيين ', 1, 'md')
 end end end end
 --     Source Rotana     --
-if text == 'القناة' and ChChck(msg) or text == 'قناة السورس' and ChChck(msg) or text == 'قناه السورس' and ChChck(msg) or text == 'قنات السورس' and ChChck(msg) or text == '↫ قناة السورس ᥀' and ChChck(msg) then 
+if text == 'القناة' and ChCheck(msg) or text == 'قناة السورس' and ChCheck(msg) or text == 'قناه السورس' and ChCheck(msg) or text == 'قنات السورس' and ChCheck(msg) or text == '↫ قناة السورس ᥀' and ChCheck(msg) then 
 Text = [[
 ↯︙[قناة السورس](https://t.me/FxxFx)
 ]]
@@ -11375,7 +11375,7 @@ https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' ..
 return false
 end
 --     Source Rotana     --
-if text == "مبرمج السورس" and ChChck(msg) or text == "مطور السورس" and ChChck(msg) or text == "وين المبرمج" and ChChck(msg) or text == "المبرمج" and ChChck(msg) or text == "↫ مبرمج السورس ᥀" and ChChck(msg) then 
+if text == "مبرمج السورس" and ChCheck(msg) or text == "مطور السورس" and ChCheck(msg) or text == "وين المبرمج" and ChCheck(msg) or text == "المبرمج" and ChCheck(msg) or text == "↫ مبرمج السورس ᥀" and ChCheck(msg) then 
 Text = [[
 ↯︙[مبرمج السورس](https://t.me/kobahlb)
 ]]
